@@ -24,7 +24,7 @@ return {
         vim.keymap.set('n', '<leader>fw', function()
             builtin.grep_string({ search = vim.fn.input("Grep > ") })
         end)
-        vim.keymap.set('n', '<leader><leader>', ":Telescope buffers<CR>", { silent=true })
+        vim.keymap.set('n', '<leader>fb', ":Telescope buffers<CR>", { silent=true })
         -- vim.keymap.set('n', '<leader>vh', builtin.help_tags, {})
     end
 }
