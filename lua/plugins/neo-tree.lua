@@ -1,9 +1,9 @@
 return {
   "nvim-neo-tree/neo-tree.nvim",
   branch = "v3.x",
-  keys = {
-    { "<leader>e", "<cmd>Neotree toggle<cr>", desc = "NeoTree", { silent = true, noremap = true } },
-  },
+  -- keys = {
+  --   { "<leader>e", "<cmd>Neotree toggle<cr>", desc = "NeoTree", { silent = true, noremap = true } },
+  -- },
   dependencies = {
     "nvim-lua/plenary.nvim",
     "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
