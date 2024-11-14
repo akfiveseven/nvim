@@ -26,6 +26,32 @@ return {
         end)
         vim.keymap.set('n', '<leader>fb', ":Telescope buffers<CR>", { silent=true })
         -- vim.keymap.set('n', '<leader>vh', builtin.help_tags, {})
+
+
+        local telescope = require('telescope.builtin')
+        local actions = require('telescope.actions')
+        local action_state = require('telescope.actions.state')
+
+        vim.api.nvim_create_user_command('BufferSwitch', function()
+            telescope.buffers({
+                attach_mappings = function(prompt_bufnr, map)
+                    -- Override the default enter action
+                    actions.select_default:replace(function()
+                        local selection = action_state.get_selected_entry()
+                        actions.close(prompt_bufnr)
+                        -- Get the full path of the selected buffer
+                        local filepath = vim.api.nvim_buf_get_name(selection.bufnr)
+                        -- Jump to the window containing this buffer
+                        vim.cmd(string.format([[call win_gotoid(win_findbuf(bufnr('%s'))[0])]], filepath))
+                    end)
+                    return true
+                end,
+            })
+        end, {})
+
+        vim.keymap.set('n', '<leader>ft', ':BufferSwitch<CR>', { noremap = true, silent = true })
+
+
     end
 }
 

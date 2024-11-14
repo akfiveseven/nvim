@@ -5,8 +5,10 @@ vim.keymap.set("n", ";", ":", { desc = "CMD enter command mode" })
 -- Default keymaps that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/keymaps.lua
 -- Add any additional keymaps here
 
-vim.keymap.set("n", "<tab>", vim.cmd.bnext)
-vim.keymap.set("n", "<S-tab>", vim.cmd.bprev)
+-- vim.keymap.set("n", "<tab>", vim.cmd.bnext)
+-- vim.keymap.set("n", "<S-tab>", vim.cmd.bprev)
+vim.keymap.set("n", "<tab>", "gt")
+vim.keymap.set("n", "<S-tab>", "gT")
 
 vim.keymap.set("n", "<leader>x", vim.cmd.bd)
 -- vim.keymap.set("n", "<leader>w", vim.cmd.w)
