@@ -8,7 +8,7 @@ vim.opt.expandtab = true
 vim.opt.smartindent = true
 vim.opt.wrap = false
 
-vim.opt.foldmethod = "indent"
+-- vim.opt.foldmethod = "indent"
 
 vim.opt.swapfile = false
 vim.opt.backup = false
@@ -63,7 +63,7 @@ function _G.custom_tabline()
         line = line .. '%' .. (i == vim.fn.tabpagenr() and '#TabLineSel#' or '#TabLine#')
         -- Add tab number
         line = line .. ' ' .. i .. ' '
-        
+
         -- Check for custom name first
         local custom_name = vim.t[i] and vim.t[i].custom_name
         if custom_name then

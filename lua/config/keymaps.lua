@@ -20,6 +20,9 @@ vim.keymap.set("n", "<leader>P", [["+P]])
 vim.keymap.set("n", "<leader>y", [["+y]])
 vim.keymap.set("n", "<leader>Y", [["+Y]])
 
+vim.keymap.set("n", "<C-p>", [[:vertical resize +10<CR>]], { silent = true })
+vim.keymap.set("n", "<C-n>", [[:vertical resize -10<CR>]], { silent = true })
+
 -- allows moving selected section up or down in code
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")

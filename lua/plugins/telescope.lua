@@ -49,7 +49,57 @@ return {
             })
         end, {})
 
+
+        vim.api.nvim_create_user_command('VerticalSplitFiles', function()
+            telescope.find_files({
+                attach_mappings = function(prompt_bufnr, map)
+                    -- Override the default enter action
+                    actions.select_default:replace(function()
+                        local selection = action_state.get_selected_entry()
+                        actions.close(prompt_bufnr)
+                        -- Open the file in a vertical split
+                        vim.cmd('vsplit ' .. selection.path)
+                    end)
+                    return true
+                end,
+            })
+        end, {})
+
+        vim.api.nvim_create_user_command('HorizontalSplitFiles', function()
+            telescope.find_files({
+                attach_mappings = function(prompt_bufnr, map)
+                    -- Override the default enter action
+                    actions.select_default:replace(function()
+                        local selection = action_state.get_selected_entry()
+                        actions.close(prompt_bufnr)
+                        -- Open the file in a vertical split
+                        vim.cmd('split ' .. selection.path)
+                    end)
+                    return true
+                end,
+            })
+        end, {})
+
+        vim.api.nvim_create_user_command('NewTabFiles', function()
+            telescope.find_files({
+                attach_mappings = function(prompt_bufnr, map)
+                    -- Override the default enter action
+                    actions.select_default:replace(function()
+                        local selection = action_state.get_selected_entry()
+                        actions.close(prompt_bufnr)
+                        -- Open the file in a vertical split
+                        vim.cmd('tabnew ' .. selection.path)
+                    end)
+                    return true
+                end,
+            })
+        end, {})
+
+
         vim.keymap.set('n', '<leader>ft', ':BufferSwitch<CR>', { noremap = true, silent = true })
+        vim.keymap.set('n', '<leader>vs', ':VerticalSplitFiles<CR>', { noremap = true, silent = true })
+        vim.keymap.set('n', '<leader>hs', ':HorizontalSplitFiles<CR>', { noremap = true, silent = true })
+        vim.keymap.set('n', '<leader>ot', ':NewTabFiles<CR>', { noremap = true, silent = true })
 
 
     end
