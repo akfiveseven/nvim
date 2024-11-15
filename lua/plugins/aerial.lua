@@ -37,7 +37,23 @@ return {
 				--   window - open aerial to the right/left of the current window
 				placement = "window",
 			},
-		})
+
+        })
+
+        -- First make sure you've required both aerial and telescope
+        local aerial = require('aerial')
+        local telescope = require('telescope')
+
+        -- Load the aerial extension in telescope
+        require('telescope').load_extension('aerial')
+
+        -- Now you can create a command to open aerial symbols in telescope
+        vim.api.nvim_create_user_command('AerialTelescope', function()
+            telescope.extensions.aerial.aerial()
+        end, {})
+
+        -- Optional: Add a keybinding
+        vim.keymap.set('n', '<leader>at', ':Telescope aerial<CR>', { noremap = true, silent = true })
 
 		vim.keymap.set("n", "<leader>fn", "<cmd>AerialNavToggle<CR>", { silent = true })
 	end,
