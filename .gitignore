@@ -1,2 +1,2 @@
-./lua/plugins/dashboard.lua
-./lua/plugins/transparent.lua
+lua/plugins/dashboard.lua
+lua/plugins/transparent.lua
