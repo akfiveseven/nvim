@@ -147,7 +147,7 @@ return {
         vim.opt.tabline = '%!v:lua.custom_tabline()'
 
 
-        vim.keymap.set('n', '<leader>ft', ':BufferSwitch<CR>', { noremap = true, silent = true })
+        vim.keymap.set('n', '<leader><leader>', ':BufferSwitch<CR>', { noremap = true, silent = true })
         vim.keymap.set('n', '<leader>fv', ':VerticalSplitFiles<CR>', { noremap = true, silent = true })
         vim.keymap.set('n', '<leader>fh', ':HorizontalSplitFiles<CR>', { noremap = true, silent = true })
 
