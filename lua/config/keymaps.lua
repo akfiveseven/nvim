@@ -55,3 +55,8 @@ vim.keymap.set('n', '<leader>u', vim.cmd.UndotreeToggle)
 -- Optional: Create a keybinding
 --
 vim.keymap.set('n', '<leader>tc', ':colorscheme ')
+
+vim.keymap.set('n', '<leader>K', '<C-w>K')
+vim.keymap.set('n', '<leader>H', '<C-w>H')
+
+
