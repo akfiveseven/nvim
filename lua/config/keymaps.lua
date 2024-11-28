@@ -52,3 +52,6 @@ vim.keymap.set("n", "<c-l>", "<cmd>TmuxNavigateRight<cr>")
 vim.keymap.set("n", "<c-\\>", "<cmd>TmuxNavigatePrevious<cr>")
 
 vim.keymap.set('n', '<leader>u', vim.cmd.UndotreeToggle)
+-- Optional: Create a keybinding
+--
+vim.keymap.set('n', '<leader>tc', ':colorscheme ')

@@ -19,7 +19,7 @@ vim.opt.hlsearch = false
 vim.opt.incsearch = true
 
 vim.opt.termguicolors = true
-vim.cmd [[colorscheme rose-pine]]
+vim.cmd [[colorscheme material-deep-ocean]]
 
 vim.opt.scrolloff = 4
 vim.opt.signcolumn = "no"
