@@ -1,5 +1,5 @@
--- vim.g.loaded_netrwPlugin = 1
--- vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
+vim.g.loaded_netrw = 1
 
 require("config.lazy")
 require("config.options")
@@ -15,4 +15,5 @@ require("config.keymaps")
 -- })
 
 vim.api.nvim_set_hl(0, "Comment", { fg = "#FFFFFF" })
+vim.api.nvim_set_hl(0, "LineNr", { fg = "#c257ff" })
 

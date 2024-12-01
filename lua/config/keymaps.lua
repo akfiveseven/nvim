@@ -59,4 +59,13 @@ vim.keymap.set('n', '<leader>tc', ':colorscheme ')
 vim.keymap.set('n', '<leader>K', '<C-w>K')
 vim.keymap.set('n', '<leader>H', '<C-w>H')
 
+-- vim.keymap.set('n', '<leader>mi', [[:let @o = join(readfile('init_macro.vim'), '\n')<CR>@o]])
+-- vim.keymap.set('n', '<leader>ml', [[:let @a = join(readfile(''), '\n')]])
+-- vim.keymap.set('n', '<leader>ms', [[:let @w = getreg('w')<CR>:call writefile(split(getreg('w'), '\n') '/path')]])
 
+vim.keymap.set('n', '<leader>mi', [[:luafile init_macro.lua<CR><leader>mw]])
+vim.keymap.set('n', '<leader>ml', [[:let @a = join(readfile(''), '\n')]])
+vim.keymap.set('n', '<leader>ms', [[:let @w = getreg('w')<CR>:call writefile(split(getreg('w'), '\n') '/path')]])
+
+vim.keymap.set('n', '<Down>', '<C-d>zz')
+vim.keymap.set('n', '<Up>', '<C-u>zz')

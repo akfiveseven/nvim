@@ -40,6 +40,22 @@ return {
                 }),
             })
 
+            -- Traverse a Map in C++
+            -- unordered_map<string, int>
+
+            ls.add_snippets("cpp", {
+                s("myTraverseMap", {
+                    t("unordered_map<string, int> map;"),
+                    t({ "", "" }),
+                    t("for (const auto& pair : map) {"),
+                    t({ "", "\t" }),
+                    i(1),
+                    t({ "", "" }),
+                    t("}"),
+                }),
+            })
+
+
             ls.add_snippets("javascriptreact", {
                 s("component", {
                     t("const "),

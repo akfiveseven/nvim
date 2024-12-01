@@ -55,6 +55,6 @@ return {
         -- Optional: Add a keybinding
         vim.keymap.set('n', '<leader>at', ':Telescope aerial<CR>', { noremap = true, silent = true })
 
-		vim.keymap.set("n", "<leader>fn", "<cmd>AerialNavToggle<CR>", { silent = true })
+		vim.keymap.set("n", "<leader>an", "<cmd>AerialNavToggle<CR>", { silent = true })
 	end,
 }
