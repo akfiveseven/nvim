@@ -15,5 +15,6 @@ require("config.keymaps")
 -- })
 
 vim.api.nvim_set_hl(0, "Comment", { fg = "#FFFFFF" })
-vim.api.nvim_set_hl(0, "LineNr", { fg = "#c257ff" })
+vim.api.nvim_set_hl(0, "LineNr", { fg = "#00ffff" })
 
+require('colors.custom_theme').setup()
