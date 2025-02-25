@@ -43,16 +43,45 @@ return {
         harpoon.ui:toggle_quick_menu(harpoon:list())
     end)
 
+    -- vim.keymap.set("n", "<leader>h", function()
+    --     local files = harpoon:list():display()
+    --     local names = {}
+    --     for _, path in ipairs(files) do
+            -- This pattern matches the text after the last slash (either / or \).
+    --         local filename = path:match("([^\\/]+)$") or path
+    --         table.insert(names, filename)
+    --     end
+    --     print(vim.inspect(names))
+    -- end)
+
     vim.keymap.set("n", "<leader>h", function()
         local files = harpoon:list():display()
         local names = {}
-        for _, path in ipairs(files) do
+        for i, path in ipairs(files) do
             -- This pattern matches the text after the last slash (either / or \).
             local filename = path:match("([^\\/]+)$") or path
-            table.insert(names, filename)
+            table.insert(names, i .. " " .. filename)
         end
-        print(vim.inspect(names))
+        local input = vim.inspect(names)
+        local output = input:gsub('[{}"]', '')
+        local new = output:gsub(",", " ")
+        print(new)
     end)
+
+
+    -- vim.keymap.set("n", "<leader>h", function()
+    --     local files = harpoon:list():display()
+    --     local names = {}
+    --     for i, path in ipairs(files) do
+    --         -- This pattern matches the text after the last slash (either / or \)
+    --         -- and removes surrounding double quotes if present.
+    --         local filename = path:match('["]?([^"\\/]+)["]?$') or path
+    --         table.insert(names, "(" i .. ") " .. filename)
+    --     end
+    --     print(vim.inspect(names))
+    -- end)
+
+
 
 
     vim.keymap.set("n", "<leader>c", function()
@@ -85,11 +114,11 @@ return {
     -- harpoon.ui:toggle_quick_menu(harpoon:list())
     -- end)
 
-    vim.keymap.set("n", "<leader>f", function()
+    vim.keymap.set("n", "<leader>1", function()
       harpoon:list():select(1)
     end)
 
-    vim.keymap.set("n", "<leader>n", function()
+    vim.keymap.set("n", "<leader>2", function()
       harpoon:list():select(2)
     end)
     --
@@ -99,6 +128,30 @@ return {
 
     vim.keymap.set("n", "<leader>4", function()
       harpoon:list():select(4)
+    end)
+
+    vim.keymap.set("n", "<leader>5", function()
+      harpoon:list():select(5)
+    end)
+
+    vim.keymap.set("n", "<leader>6", function()
+      harpoon:list():select(6)
+    end)
+    --
+    vim.keymap.set("n", "<leader>7", function()
+      harpoon:list():select(7)
+    end)
+
+    vim.keymap.set("n", "<leader>8", function()
+      harpoon:list():select(8)
+    end)
+
+    vim.keymap.set("n", "<leader>9", function()
+      harpoon:list():select(9)
+    end)
+
+    vim.keymap.set("n", "<leader>0", function()
+      harpoon:list():select(10)
     end)
 
     -- vim.keymap.set("n", "<C-n>", function()
