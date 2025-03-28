@@ -55,6 +55,12 @@ return {
                 }),
             })
 
+            ls.add_snippets("css", {
+                s("root", {
+                    t("myroot"),
+                }),
+            })
+
 
             ls.add_snippets("javascriptreact", {
                 s("component", {
@@ -84,8 +90,65 @@ return {
                     t({ "", "" }),
                     t("</div>"),
                 }),
+                s("useEffect", {
+                    t("useEffect(() => {"),
+                    t({ "", "\t" }),
+                    t("// Side effect logic"),
+                    t({ "", "\t" }),
+                    t("return () => {"),
+                    t({ "", "\t\t" }),
+                    t("// Optional cleanup logic"),
+                    t({ "", "\t" }),
+                    t("};"),
+                    t({ "", "" }),
+                    t("}, []);"),
+
+                }),
             })
 
+            ls.add_snippets("typescriptreact", {
+                s("component", {
+                    t("const "),
+                    i(1),
+                    t(" = ("),
+                    i(2),
+                    t(") => {"),
+                    t({ "", "\t" }),
+                    t("return ("),
+                    t({ "", "\t\t" }),
+                    t("<>"),
+                    t({ "", "\t\t\t" }),
+                    i(0),
+                    t({ "", "\t\t" }),
+                    t("</>"),
+                    t({ "", "\t" }),
+                    t(")"),
+                    t({ "", "};" }),
+                }),
+                s("div", {
+                    t("<div className='"),
+                    i(1),
+                    t("'>"),
+                    t({ "", "\t" }),
+                    i(0),
+                    t({ "", "" }),
+                    t("</div>"),
+                }),
+                s("useEffect", {
+                    t("useEffect(() => {"),
+                    t({ "", "\t" }),
+                    t("// Side effect logic"),
+                    t({ "", "\t" }),
+                    t("return () => {"),
+                    t({ "", "\t\t" }),
+                    t("// Optional cleanup logic"),
+                    t({ "", "\t" }),
+                    t("};"),
+                    t({ "", "" }),
+                    t("}, []);"),
+
+                }),
+            })
 
 
             -- local ls = require("luasnip")

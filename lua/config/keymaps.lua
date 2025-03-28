@@ -44,6 +44,7 @@ vim.keymap.set("n", "<leader>rw", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left>
 
 vim.keymap.set("n", "<leader>lsp", [[:lua vim.diagnostic.open_float(0, { scope = "line" })]])
 
+-- VIM TMUX NAVIGATOR
 vim.keymap.set("n", "<c-h>", "<cmd>TmuxNavigateLeft<cr>")
 vim.keymap.set("n", "<c-j>", "<cmd>TmuxNavigateDown<cr>")
 vim.keymap.set("n", "<c-k>", "<cmd>TmuxNavigateUp<cr>")
