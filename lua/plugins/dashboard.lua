@@ -100,7 +100,7 @@ return {
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⠻⢿⡿⠗⠀⠀⠀⠀⠀⠀⠀⠘⠿⣿⡿⠋⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
     ]]
 
-        logo = string.rep("\n", 8) .. doom_small .. "\n\n"
+        logo = string.rep("\n", 8) .. neovim_gothic .. "\n\n"
 
         local opts = {
             theme = "doom",
