@@ -9,6 +9,7 @@ vim.keymap.set("n", ";", ":", { desc = "CMD enter command mode" })
 -- vim.keymap.set("n", "<S-tab>", vim.cmd.bprev)
 vim.keymap.set("n", "<tab>", "gt")
 vim.keymap.set("n", "<S-tab>", "gT")
+vim.keymap.set("n", "<C-b>", "<C-^>")
 
 vim.keymap.set("n", "<leader>x", vim.cmd.bd)
 -- vim.keymap.set("n", "<leader>w", vim.cmd.w)

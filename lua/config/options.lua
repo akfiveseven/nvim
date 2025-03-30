@@ -28,6 +28,9 @@ vim.opt.isfname:append("@-@")
 vim.opt.fillchars = {eob = " "}
 
 vim.opt.updatetime = 50
+
+vim.opt.conceallevel = 1
+
 --vim.opt.colorcolumn = "80"
 
 -- vim.g.lua_snippets_path = vim.fn.stdpath "config" .. "/lua/lua_snippets"
