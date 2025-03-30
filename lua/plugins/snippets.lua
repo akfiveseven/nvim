@@ -82,9 +82,9 @@ return {
                     t({ "", "};" }),
                 }),
                 s("div", {
-                    t("<div className='"),
+                    t("<div className=\""),
                     i(1),
-                    t("'>"),
+                    t("\">"),
                     t({ "", "\t" }),
                     i(0),
                     t({ "", "" }),
@@ -103,6 +103,9 @@ return {
                     t({ "", "" }),
                     t("}, []);"),
 
+                }),
+                s("tailwindThing", {
+                    t("text-lg text-red-900")
                 }),
             })
 
