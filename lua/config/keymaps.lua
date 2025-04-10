@@ -70,3 +70,5 @@ vim.keymap.set('n', '<leader>ms', [[:let @w = getreg('w')<CR>:call writefile(spl
 
 vim.keymap.set('n', '<Down>', '<C-d>zz')
 vim.keymap.set('n', '<Up>', '<C-u>zz')
+vim.keymap.set("n", 'H', '^')
+vim.keymap.set("n", 'L', '$')
