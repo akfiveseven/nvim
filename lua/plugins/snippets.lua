@@ -60,6 +60,16 @@ return {
           t({"", "\t"}),
           i(3)
         }),
+        s("forDict", {
+          -- for key, value in person.items():
+            -- print(f"{key}: {value}")
+          t("for key, value in "),
+          i(1),
+          t(".items():"),
+          t({"", "\t"}),
+          t("print(f\"{key}: {value}\")"),
+          i(2)
+        }),
         s("function", {
           t("def "),
           i(1),
