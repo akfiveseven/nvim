@@ -90,11 +90,12 @@ return {
         ["<C-Space>"] = cmp.mapping.complete(),
       }),
       sources = cmp.config.sources({
-        { name = 'nvim_lsp' },
         { name = 'luasnip' }, -- For luasnip users.
-      }, {
-          { name = 'buffer' },
-        })
+        { name = 'nvim_lsp' },
+        { name = 'buffer' },
+        { name = 'path' },
+      }
+      )
     })
 
     vim.diagnostic.config({
