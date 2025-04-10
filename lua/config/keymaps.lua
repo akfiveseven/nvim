@@ -38,7 +38,7 @@ vim.keymap.set("n", "N", "Nztzv")
 vim.keymap.set("x", "<leader>dp", [["_dP]])
 
 -- deletes without yanking
-vim.keymap.set("n", "<leader>v", [["_d]])
+vim.keymap.set({"n", "v"}, "<leader>v", [["_d]])
 
 -- search and replace globally the word the cursor is on
 vim.keymap.set("n", "<leader>rw", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
@@ -72,3 +72,7 @@ vim.keymap.set('n', '<Down>', '<C-d>zz')
 vim.keymap.set('n', '<Up>', '<C-u>zz')
 vim.keymap.set("n", 'H', '^')
 vim.keymap.set("n", 'L', '$')
+vim.keymap.set("n", 'cH', 'c^')
+vim.keymap.set("n", 'cL', 'c$')
+vim.keymap.set("n", 'dH', 'd^')
+vim.keymap.set("n", 'dL', 'd$')
