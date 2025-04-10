@@ -35,13 +35,13 @@ vim.opt.conceallevel = 1
 
 -- vim.g.lua_snippets_path = vim.fn.stdpath "config" .. "/lua/lua_snippets"
 
-vim.api.nvim_create_user_command('indentFour', function(opts)
+vim.api.nvim_create_user_command('IndentFour', function(opts)
   vim.opt.tabstop = 4
   vim.opt.softtabstop = 4
   vim.opt.shiftwidth = 4
 end, { nargs = '?' })
 
-vim.api.nvim_create_user_command('indentTwo', function(opts)
+vim.api.nvim_create_user_command('IndentTwo', function(opts)
   vim.opt.tabstop = 2
   vim.opt.softtabstop = 2
   vim.opt.shiftwidth = 2
