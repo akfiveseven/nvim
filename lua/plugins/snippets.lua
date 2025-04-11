@@ -13,9 +13,9 @@ return {
       local s = ls.snippet
       local t = ls.text_node
       local i = ls.insert_node
-      local extras = require("luasnip.extras")
-      local rep = extras.rep
-      local fmt = require("luasnip.extras.fmt").fmt
+      -- local extras = require("luasnip.extras")
+      -- local rep = extras.rep
+      -- local fmt = require("luasnip.extras.fmt").fmt
 
       vim.keymap.set({ "i", "s" }, "<tab>", function()
         if ls.expand_or_jumpable() then

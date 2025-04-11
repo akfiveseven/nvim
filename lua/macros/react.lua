@@ -1,0 +1,1 @@
+-- Call with :luafile ~/.config/nvim/macros/react.lua

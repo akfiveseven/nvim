@@ -1,3 +1,4 @@
+
 return {
   "ThePrimeagen/harpoon",
   branch = "harpoon2",
@@ -71,12 +72,8 @@ return {
       harpoon:list():select(2)
     end)
     --
-    vim.keymap.set("n", "<leader>3", function()
+    vim.keymap.set("n", "<C-t>", function()
       harpoon:list():select(3)
-    end)
-
-    vim.keymap.set("n", "<leader>4", function()
-      harpoon:list():select(4)
     end)
 
     -- vim.keymap.set("n", "<C-n>", function()
