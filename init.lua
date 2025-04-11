@@ -4,6 +4,7 @@ vim.g.loaded_netrw = 1
 require("config.lazy")
 require("config.options")
 require("config.keymaps")
+require("config.commands")
 
 -- In your init.lua or a separate colors.lua file
 -- vim.api.nvim_create_autocmd("ColorScheme", {
