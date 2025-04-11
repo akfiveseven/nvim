@@ -57,6 +57,8 @@ vim.keymap.set('n', '<leader>H', '<C-w>H')
 
 vim.keymap.set('n', '<Down>', '<C-d>zz')
 vim.keymap.set('n', '<Up>', '<C-u>zz')
+vim.keymap.set('n', '<C-d>', '<C-d>zz')
+vim.keymap.set('n', '<C-u>', '<C-u>zz')
 vim.keymap.set("n", 'H', '^')
 vim.keymap.set("n", 'L', '$')
 vim.keymap.set("n", 'cH', 'c^')
