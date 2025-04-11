@@ -62,7 +62,7 @@ return {
         }),
         s("forDict", {
           -- for key, value in person.items():
-          -- print(f"{key}: {value}")
+            -- print(f"{key}: {value}")
           t("for key, value in "),
           i(1),
           t(".items():"),
@@ -247,7 +247,6 @@ return {
           i(3),
           t(");")
         }),
-
       })
 
       ls.add_snippets("typescriptreact", {
@@ -326,7 +325,6 @@ return {
           t(");")
         }),
       })
-
 
 
       -- local ls = require("luasnip")
