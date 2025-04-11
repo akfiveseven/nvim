@@ -62,7 +62,7 @@ return {
         }),
         s("forDict", {
           -- for key, value in person.items():
-            -- print(f"{key}: {value}")
+          -- print(f"{key}: {value}")
           t("for key, value in "),
           i(1),
           t(".items():"),
@@ -247,6 +247,7 @@ return {
           i(3),
           t(");")
         }),
+
       })
 
       ls.add_snippets("typescriptreact", {
@@ -269,9 +270,9 @@ return {
           t({ "", "};" }),
         }),
         s("div", {
-          t("<div className='"),
+          t("<div className=\""),
           i(1),
-          t("'>"),
+          t("\">"),
           t({ "", "\t" }),
           i(0),
           t({ "", "" }),
@@ -291,7 +292,41 @@ return {
           t("}, []);"),
 
         }),
+        s("className", {
+          t("className=\""),
+          i(1),
+          t("\"")
+        }),
+        s("key", {
+          t("key={"),
+          i(1),
+          t("}")
+        }),
+        s("map", {
+          t("map(("),
+          i(1),
+          t(") => ("),
+          t({"", "\t"}),
+          i(2),
+          t({"", ""}),
+          t("))")
+        }),
+        s("onClick", {
+          t("onClick={"),
+          i(1),
+          t("}")
+        }),
+        s("useState", {
+          t("const ["),
+          i(1),
+          t(", "),
+          i(2),
+          t("] = useState("),
+          i(3),
+          t(");")
+        }),
       })
+
 
 
       -- local ls = require("luasnip")
