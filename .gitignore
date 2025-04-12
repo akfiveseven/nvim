@@ -1,2 +1,3 @@
 lua/plugins/leetcode.lua
 lua/plugins/obsidian.lua
+lazy-lock.lua
