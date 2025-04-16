@@ -19,11 +19,7 @@ vim.opt.hlsearch = false
 vim.opt.incsearch = true
 
 vim.opt.termguicolors = true
-<<<<<<< HEAD
---vim.cmd [[colorscheme material-deep-ocean]]
-=======
 -- vim.cmd [[colorscheme material-deep-ocean]]
->>>>>>> 3d59a11361df25506b064885f9e24dbb7a4a11ae
 
 vim.opt.scrolloff = 4
 vim.opt.signcolumn = "no"
