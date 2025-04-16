@@ -30,9 +30,19 @@ return {
         end
       end, { silent = true })
 
+      ls.add_snippets("lua", {
+        s("test", {
+          t("MYTES"),
+        })
+      })
 
 
       ls.add_snippets("python", {
+        s("main", {
+          t("if __name__ == \"__main__\":"),
+          t({"", "\t"}),
+          i(1)
+        }),
         s("if", {
           t("if "),
           i(1),

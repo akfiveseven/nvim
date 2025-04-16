@@ -15,7 +15,7 @@ require("config.commands")
 --   end,
 -- })
 
-vim.api.nvim_set_hl(0, "Comment", { fg = "#FFFFFF" })
-vim.api.nvim_set_hl(0, "LineNr", { fg = "#00ffff" })
+--vim.api.nvim_set_hl(0, "Comment", { fg = "#FFFFFF" })
+--vim.api.nvim_set_hl(0, "LineNr", { fg = "#00ffff" })
 
-require('colors.custom_theme').setup()
+--require('colors.custom_theme').setup()

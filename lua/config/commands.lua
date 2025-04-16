@@ -10,6 +10,12 @@ vim.api.nvim_create_user_command('TabIndentTwo', function(opts)
   vim.opt.shiftwidth = 2
 end, { nargs = '?' })
 
+-- Add this to your init.lua or another config file
+vim.api.nvim_create_user_command('SnippetsComputerCraft', function()
+  vim.cmd('luafile ~/.config/nvim-config-1/lua/snippets/computercraft.lua')
+end, {})
+
+
 
 -- Create a command to save a register to a file (append mode)
 -- :MacroSaveRegister <register>
