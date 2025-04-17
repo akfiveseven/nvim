@@ -30,13 +30,6 @@ return {
         end
       end, { silent = true })
 
-      ls.add_snippets("lua", {
-        s("test", {
-          t("MYTES"),
-        })
-      })
-
-
       ls.add_snippets("python", {
         s("main", {
           t("if __name__ == \"__main__\":"),
@@ -182,6 +175,11 @@ return {
         }),
       })
 
+      ls.add_snippets("javascript", {
+        s("mytest", {
+          t("Hello")
+        })
+      })
 
       ls.add_snippets("javascriptreact", {
         s("component", {
