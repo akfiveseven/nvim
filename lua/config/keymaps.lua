@@ -25,6 +25,10 @@ vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 -- append line below to current, and keep cursor at start
 vim.keymap.set("n", "J", "mzJ`z")
 
+
+vim.keymap.set("n", "gg", "m'gg")
+vim.keymap.set("n", "G", "m'G")
+
 -- move up and down and keep cursor in center
 vim.keymap.set({"n", "v"}, "n", "nztzv")
 vim.keymap.set({"n", "v"}, "N", "Nztzv")

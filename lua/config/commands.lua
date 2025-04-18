@@ -15,7 +15,11 @@ vim.api.nvim_create_user_command('SnippetsLoadComputerCraft', function()
   vim.cmd('luafile ~/.config/nvim-config-1/lua/snippets/computercraft.lua')
 end, {})
 
-
+vim.api.nvim_create_user_command('MarksDeleteAll', function()
+  vim.cmd('demarks a-z')
+  vim.cmd('demarks A-Z')
+  vim.cmd('demarks 0-9')
+end, {})
 
 -- Create a command to save a register to a file (append mode)
 -- :MacroSaveRegister <register>
