@@ -12,7 +12,16 @@ return {
   },
   config = function()
     require('neo-tree').setup({
-      -- Customize neo-tree settings here
+
+      event_handlers = {
+        -- auto close when file is opened
+        {
+          event = "file_opened",
+          handler = function(_)
+            require("neo-tree.command").execute({ action = "close" })
+          end,
+        },
+      },
       filesystem = {
         follow_current_file = {
           enabled = true
