@@ -40,7 +40,9 @@ vim.keymap.set("x", "<leader>dp", [["_dP]])
 vim.keymap.set({"n", "v"}, "<leader>dv", [["_d]])
 
 -- search and replace globally the word the cursor is on
-vim.keymap.set("n", "<leader>rw", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
+vim.keymap.set("n", "<leader>rwg", [[:%s/<C-r><C-w>//gI<Left><Left><Left>]])
+vim.keymap.set("n", "<leader>rws", [[:'<,'>s/<C-r><C-w>//gI<Left><Left><Left>]])
+vim.keymap.set("v", "<leader>rws", [[:s/]])
 
 vim.keymap.set("n", "<leader>lsp", [[:lua vim.diagnostic.open_float(0, { scope = "line" })]])
 
