@@ -41,7 +41,7 @@ return {
       -- Send deleted files to the trash instead of permanently deleting them (:help oil-trash)
       delete_to_trash = false,
       -- Skip the confirmation popup for simple operations (:help oil.skip_confirm_for_simple_edits)
-      skip_confirm_for_simple_edits = false,
+      skip_confirm_for_simple_edits = true,
       -- Selecting a new/moved/renamed file or directory will prompt you to save changes first
       -- (:help prompt_save_on_select_new_entry)
       prompt_save_on_select_new_entry = true,
@@ -56,7 +56,7 @@ return {
         timeout_ms = 1000,
         -- Set to true to autosave buffers that are updated with LSP willRenameFiles
         -- Set to "unmodified" to only save unmodified buffers
-        autosave_changes = false,
+        autosave_changes = true,
       },
       -- Constrain the cursor to the editable parts of the oil buffer
       -- Set to `false` to disable, or "name" to keep it on the file names
