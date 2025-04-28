@@ -71,3 +71,6 @@ vim.keymap.set("n", 'cH', 'c^')
 vim.keymap.set("n", 'cL', 'c$')
 vim.keymap.set("n", 'dH', 'd^')
 vim.keymap.set("n", 'dL', 'd$')
+
+vim.keymap.set("n", "<leader>tt", ":ToggleTerm<CR>", { desc = "CMD enter command mode", silent = true })
+vim.keymap.set("t", "<C-k>", "<C-\\><C-n><C-w>k", { desc = "CMD enter command mode", silent = true })

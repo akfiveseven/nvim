@@ -31,11 +31,18 @@ return {
       end, { silent = true })
 
       ls.add_snippets("python", {
-        s("main", {
-          t("if __name__ == \"__main__\":"),
-          t({"", "\t"}),
-          i(1)
-        }),
+        -- DSA Snippets
+        s({ trig = "dfs",
+          dscr = { "Depth-First Search",
+            "Depth-first search on a graph in python" } }, {
+            t('test'), t({"", "    "}), i(0),
+          }),
+        -- Core snippets
+        s({ trig = "main",
+          dscr = { "Python module guard",
+            "Executes block only when run as a script" } }, {
+            t('if __name__ == "__main__":'), t({"", "    "}), i(0),
+          }),
         s("if", {
           t("if "),
           i(1),
@@ -66,7 +73,7 @@ return {
         }),
         s("forDict", {
           -- for key, value in person.items():
-            -- print(f"{key}: {value}")
+          -- print(f"{key}: {value}")
           t("for key, value in "),
           i(1),
           t(".items():"),
@@ -178,10 +185,18 @@ return {
       ls.add_snippets("javascript", {
         s("mytest", {
           t("Hello")
-        })
+        }),
+        s("commentJSX", {
+          t("{/*"),
+          t({"", ""}),
+          t("*/}"),
+        }),
       })
 
       ls.add_snippets("javascriptreact", {
+        s("commentJSX", {
+          t("{/**/}")
+        }),
         s("component", {
           t("const "),
           i(1),
