@@ -4,6 +4,10 @@ vim.api.nvim_create_user_command('TabIndentFour', function(opts)
   vim.opt.shiftwidth = 4
 end, { nargs = '?' })
 
+vim.api.nvim_create_user_command('NoLineNumbers', function(opts)
+  vim.cmd('setlocal nonumber norelativenumber')
+end, { nargs = '?' })
+
 vim.api.nvim_create_user_command('TabIndentTwo', function(opts)
   vim.opt.tabstop = 2
   vim.opt.softtabstop = 2
