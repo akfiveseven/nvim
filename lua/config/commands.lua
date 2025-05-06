@@ -55,3 +55,55 @@ vim.api.nvim_create_user_command(
   end,
   { nargs = 1, desc = "Append register content to macro.lua" }
 )
+
+
+-- OPEN AND EXECUTE SNIPPETS
+
+-- Function to open a directory in Telescope and execute luafile on selection
+function OpenAndExecute(directory)
+  local actions = require('telescope.actions')
+  local action_state = require('telescope.actions.state')
+  
+  -- Use the directory passed as an argument, or default to a specific path
+  local target_dir = "~/.config/nvim/lua/snippets"
+  
+  require('telescope.builtin').find_files({
+    prompt_title = "Select Lua File to Execute",
+    cwd = vim.fn.expand(target_dir),
+    attach_mappings = function(prompt_bufnr, map)
+      -- Override the default select action
+      actions.select_default:replace(function()
+        local selection = action_state.get_selected_entry()
+        -- Close telescope before executing the file
+        actions.close(prompt_bufnr)
+        
+        -- Get the full path of the selected file
+        local file_path = selection.cwd .. "/" .. selection.value
+        
+        -- Execute the luafile command on the selected file
+        vim.cmd('luafile ' .. file_path)
+        print("Executed: " .. file_path)
+      end)
+      return true
+    end,
+  })
+end
+
+-- Create a command to call this function
+vim.api.nvim_create_user_command('LoadSnippets', function(opts)
+  OpenAndExecute(opts.args)
+end, {
+  nargs = '?',
+  desc = 'Open directory in Telescope and execute selected Lua file',
+  complete = 'dir'
+})
+
+-- Example keymap (optional)
+-- vim.api.nvim_set_keymap('n', '<leader>le', 
+--   ":LuaExec<CR>", 
+--   {noremap = true, silent = true, desc = 'Execute Lua file from directory'})
+
+-- To provide a specific directory
+-- vim.api.nvim_set_keymap('n', '<leader>lp', 
+--   ":LuaExec ~/projects/lua-scripts<CR>", 
+--   {noremap = true, silent = true, desc = 'Execute Lua file from projects'})
