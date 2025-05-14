@@ -10,6 +10,8 @@ vim.keymap.set("n", "<C-b>", "<C-^>")
 
 vim.keymap.set("n", "<leader>x", vim.cmd.bd)
 vim.keymap.set("n", "<leader>Q", vim.cmd.qall)
+vim.keymap.set("n", "<tab>", vim.cmd.bn)
+vim.keymap.set("n", "<S-tab>", vim.cmd.bp)
 
 vim.keymap.set({"n", "v"}, "<leader>p", [["+p]])
 vim.keymap.set({"n", "v"}, "<leader>P", [["+P]])
