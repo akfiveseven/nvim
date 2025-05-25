@@ -98,6 +98,8 @@ end, {
   complete = 'dir'
 })
 
+vim.keymap.set("n", "<leader>lsf", ":LoadSnippets<CR>")
+
 -- Example keymap (optional)
 -- vim.api.nvim_set_keymap('n', '<leader>le', 
 --   ":LuaExec<CR>", 
