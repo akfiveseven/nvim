@@ -1,3 +1,5 @@
 lua/plugins/leetcode.lua
 lua/plugins/obsidian.lua
+lua/plugins/avante.lua
+lua/plugins/dashboard.lua
 lazy-lock.json
