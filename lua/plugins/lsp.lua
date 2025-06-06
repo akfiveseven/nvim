@@ -31,18 +31,24 @@ return {
     require("mason").setup()
     require("mason-lspconfig").setup({
       ensure_installed = {
-        "lua_ls"
+        "lua_ls",
+        "pylsp",
+        "ast_grep",
+        "tailwindcss",
+        "ts_ls"
       },
       handlers = {
-        function(server_name) -- default handler (optional)
+        function(server_name)
           require("lspconfig")[server_name].setup {
-            capabilities = capabilities
+            capabilities = capabilities,
+            autostart = false,  -- 🔴 prevent auto-start
           }
         end,
 
         zls = function()
           local lspconfig = require("lspconfig")
           lspconfig.zls.setup({
+            autostart = false,  -- 🔴 disable autostart
             root_dir = lspconfig.util.root_pattern(".git", "build.zig", "zls.json"),
             settings = {
               zls = {
@@ -54,11 +60,12 @@ return {
           })
           vim.g.zig_fmt_parse_errors = 0
           vim.g.zig_fmt_autosave = 0
-
         end,
+
         ["lua_ls"] = function()
           local lspconfig = require("lspconfig")
           lspconfig.lua_ls.setup {
+            autostart = false,  -- 🔴 disable autostart
             capabilities = capabilities,
             settings = {
               Lua = {
