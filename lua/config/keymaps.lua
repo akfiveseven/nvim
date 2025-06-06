@@ -1,4 +1,3 @@
-
 vim.keymap.set("n", ";", ":", { desc = "CMD enter command mode" })
 --map("i", "jk", "<ESC>")
 
@@ -6,47 +5,44 @@ vim.keymap.set("n", ";", ":", { desc = "CMD enter command mode" })
 -- Default keymaps that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/keymaps.lua
 -- Add any additional keymaps here
 
-vim.keymap.set("n", "<C-b>", "<C-^>")
+vim.keymap.set("n", "<C-b>", "<C-^>", { desc = "Goto previous buffer" })
 
-vim.keymap.set("n", "<leader>x", vim.cmd.bd)
-vim.keymap.set("n", "<leader>Q", vim.cmd.qall)
-vim.keymap.set("n", "<tab>", vim.cmd.bn)
-vim.keymap.set("n", "<S-tab>", vim.cmd.bp)
+vim.keymap.set("n", "<leader>x", vim.cmd.bd, { desc = "Delete buffer" })
+vim.keymap.set("n", "<leader>Q", vim.cmd.qall, { desc = "Quit Neovim without saving" })
+vim.keymap.set("n", "<tab>", vim.cmd.bn, { desc = "Goto next buffer" })
+vim.keymap.set("n", "<S-tab>", vim.cmd.bp, { desc = "Goto previous buffer" })
 
-vim.keymap.set({"n", "v"}, "<leader>p", [["+p]])
-vim.keymap.set({"n", "v"}, "<leader>P", [["+P]])
-vim.keymap.set({"n", "v"}, "<leader>y", [["+y]])
-vim.keymap.set({"n", "v"}, "<leader>Y", [["+Y]])
+vim.keymap.set({"n", "v"}, "<leader>p", [["+p]], { desc = "Paste from system clipboard after cursor" })
+vim.keymap.set({"n", "v"}, "<leader>P", [["+P]], { desc = "Paste from system clipboard before cursor" })
+vim.keymap.set({"n", "v"}, "<leader>y", [["+y]], { desc = "Yank to system clipboard" })
 
-vim.keymap.set({"n", "i", "v"}, "<C-i>", [[:resize +10<CR>:vertical resize +10<CR>]], { silent = true })
+vim.keymap.set({"n", "i", "v"}, "<C-i>", [[:resize +10<CR>:vertical resize +10<CR>]], { desc = "Increase window size", silent = true })
 
 -- allows moving selected section up or down in code
-vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
-vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
+vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv", { desc = "Move code block down" })
+vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv", { desc = "Move code block up" })
 
 -- append line below to current, and keep cursor at start
-vim.keymap.set("n", "J", "mzJ`z")
-
-
-vim.keymap.set("n", "gg", "m'gg")
-vim.keymap.set("n", "G", "m'G")
+vim.keymap.set("n", "J", "mzJ`z", { desc = "Append line below to current" })
 
 -- move up and down and keep cursor in center
 vim.keymap.set({"n", "v"}, "n", "nztzv")
 vim.keymap.set({"n", "v"}, "N", "Nztzv")
 
 -- when pasting, it keeps original yank content
-vim.keymap.set("x", "<leader>dp", [["_dP]])
+vim.keymap.set("x", "<leader>dp", [["_dP]], { desc = "Paste & keep yank content" })
 
 -- deletes without yanking
-vim.keymap.set({"n", "v"}, "<leader>dv", [["_d]])
+vim.keymap.set({"n", "v"}, "<leader>dv", [["_d]], { desc = "Delete without yanking" })
 
 -- search and replace globally the word the cursor is on
-vim.keymap.set("n", "<leader>rwg", [[:%s/<C-r><C-w>//gI<Left><Left><Left>]])
-vim.keymap.set("n", "<leader>rws", [[:'<,'>s/<C-r><C-w>//gI<Left><Left><Left>]])
-vim.keymap.set("v", "<leader>rws", [[:s/]])
+vim.keymap.set("n", "<leader>rwg", [[:%s/<C-r><C-w>//gI<Left><Left><Left>]], { desc = "Replace word under cursor globally" })
+vim.keymap.set("n", "<leader>rwl", [[:s/<C-r><C-w>//gI<Left><Left><Left>]], { desc = "Replace word under cursor current line" })
+vim.keymap.set("v", "<leader>rws", [[:s//gI<Left><Left><Left>]], { desc = "Replace word in selection" })
 
-vim.keymap.set("n", "<leader>lsp", [[:lua vim.diagnostic.open_float(0, { scope = "line" })<CR>]])
+vim.keymap.set("n", "<leader>lspi", [[:lua vim.diagnostic.open_float(0, { scope = "line" })<CR>]], { desc = "Lsp inspect" })
+vim.keymap.set("n", "<leader>lspe", [[:LspStart]], { desc = "Start Lsp" })
+vim.keymap.set("n", "<leader>lspd", [[:LspStart]], { desc = "Stop Lsp" })
 
 -- VIM TMUX NAVIGATOR
 vim.keymap.set("n", "<c-h>", "<cmd>TmuxNavigateLeft<cr>")
@@ -55,13 +51,13 @@ vim.keymap.set("n", "<c-k>", "<cmd>TmuxNavigateUp<cr>")
 vim.keymap.set("n", "<c-l>", "<cmd>TmuxNavigateRight<cr>")
 vim.keymap.set("n", "<c-\\>", "<cmd>TmuxNavigatePrevious<cr>")
 
-vim.keymap.set('n', '<leader>u', vim.cmd.UndotreeToggle)
+vim.keymap.set('n', '<leader>u', vim.cmd.UndotreeToggle, { desc = "Toggle Undo Tree" })
 -- Optional: Create a keybinding
 --
-vim.keymap.set('n', '<leader>cs', ':colorscheme ')
+vim.keymap.set('n', '<leader>cs', ':colorscheme ', { desc = "Choose theme" })
 
-vim.keymap.set('n', '<leader>K', '<C-w>K')
-vim.keymap.set('n', '<leader>H', '<C-w>H')
+vim.keymap.set('n', '<leader>K', '<C-w>K', { desc = "Switch panes vertically" })
+vim.keymap.set('n', '<leader>H', '<C-w>H', { desc = "Switch panes horizontally" })
 
 vim.keymap.set('n', '<Down>', '<C-d>zz')
 vim.keymap.set('n', '<Up>', '<C-u>zz')
