@@ -6,7 +6,7 @@ return {
     -- install jsregexp (optional!).
     build = "make install_jsregexp",
 
-    dependencies = { "rafamadriz/friendly-snippets" },
+    -- dependencies = { "rafamadriz/friendly-snippets" },
 
     config = function()
       local ls = require("luasnip")
@@ -30,38 +30,31 @@ return {
         end
       end, { silent = true })
 
+      -- =======PYTHON SNIPPETS======= --
       ls.add_snippets("python", {
+
         -- DSA Snippets
-        s({ trig = "dfs",
-          dscr = { "Depth-First Search",
-            "Depth-first search on a graph in python" } }, {
+        s({ trig = "dfs", dscr = { "Depth-First Search", "Depth-first search on a graph in python" } }, {
             t('test'), t({"", "    "}), i(0),
-          }),
+        }),
+
         -- Core snippets
-        s({ trig = "main",
-          dscr = { "Python module guard",
-            "Executes block only when run as a script" } }, {
-            t('if __name__ == "__main__":'), t({"", "    "}), i(0),
-          }),
+        s({ trig = "main", dscr = { "Python module guard", "Executes block only when run as a script" } }, {
+            t('if __name__ == "__main__":'), t({"", "\t"}), i(0),
+        }),
+
         s("if", {
-          t("if "),
-          i(1),
-          t(":"),
-          t({"", "\t"}),
-          i(2)
+          t("if "), i(1), t(":"), t({"", "\t"}), i(2)
         }),
+
         s("else", {
-          t("else:"),
-          t({"", "\t"}),
-          i(1)
+          t("else:"), t({"", "\t"}), i(1)
         }),
+
         s("elif", {
-          t("elif "),
-          i(1),
-          t(":"),
-          t({"", "\t"}),
-          i(2)
+          t("elif "), i(1), t(":"), t({"", "\t"}), i(2)
         }),
+
         s("forRange", {
           t("for "),
           i(1),
@@ -71,6 +64,7 @@ return {
           t({"", "\t"}),
           i(3)
         }),
+
         s("forDict", {
           -- for key, value in person.items():
           -- print(f"{key}: {value}")
@@ -81,6 +75,7 @@ return {
           t("print(f\"{key}: {value}\")"),
           i(2)
         }),
+
         s("function", {
           t("def "),
           i(1),
@@ -90,23 +85,28 @@ return {
           t({"", "\t"}),
           i(3)
         }),
+
         s("list", {
           i(1),
           t(" = ["),
           i(2),
           t("]")
         }),
+
         s("tuple", {
           t("point = (3, 4)"),
           t({"", ""}),
           t("x, y = point # tuple unpacking")
         }),
+
         s("set", {
           t("unique_vals = {1, 2, 3}")
         }),
+
         s("dictionary", {
           t("person = {\"name\": \"Alice\", \"age\": 30}")
         }),
+
         s("class", {
           t("class "),
           i(1),
@@ -118,6 +118,7 @@ return {
           t({"", "\t\t"}),
           i(3)
         }),
+
         s("inherit", {
           t("class Animal:"),
           t({"", "\t"}),
@@ -135,6 +136,7 @@ return {
           t({"", "\t\t"}),
           t("return f\"{self.name} barks\""),
         }),
+
         s("try", {
           t("try:"),
           t({"", "\t"}),
@@ -150,6 +152,7 @@ return {
           t({"", "\t"}),
           i(4)
         }),
+
         s("type", {
           t("type("),
           i(1),
