@@ -34,7 +34,7 @@ return {
       ls.add_snippets("python", {
 
         -- DSA Snippets
-        s({ trig = "dfs", dscr = { "Depth-First Search", "Depth-first search on a graph in python" } }, {
+        s({ name = "test run", trig = "dfs", dscr = { "Depth-First Search", "Depth-first search on a graph in python" } }, {
             t('test'), t({"", "    "}), i(0),
         }),
 

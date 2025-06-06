@@ -1,3 +1,16 @@
+vim.api.nvim_create_user_command('LuaSnipList', function()
+  local ls = require("luasnip")
+
+  -- Get snippets for current buffer
+  local ft = vim.bo.filetype
+  local snippets = ls.get_snippets(ft)
+
+  print("Snippets for " .. ft .. ":")
+  for _, snippet in ipairs(snippets) do
+      print("  " .. snippet.trigger .. " - " .. (snippet.name or ""))
+  end
+end, {})
+
 vim.api.nvim_create_user_command('TabIndentFour', function(opts)
   vim.opt.tabstop = 4
   vim.opt.softtabstop = 4
