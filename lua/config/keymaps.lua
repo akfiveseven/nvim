@@ -76,3 +76,12 @@ vim.keymap.set("n", 'dL', 'd$')
 
 vim.keymap.set("n", "<leader>tt", ":ToggleTerm<CR>", { desc = "CMD enter command mode", silent = true })
 vim.keymap.set("t", "<C-k>", "<C-\\><C-n><C-w>k", { desc = "CMD enter command mode", silent = true })
+
+-- AVANTE KEYMAPS
+vim.keymap.set("n", "<leader>ava", ":AvanteAsk", { desc = "Ask Avante", silent = true })
+vim.keymap.set("n", "<leader>avb", ":AvanteBuild", { desc = "Build with Avante", silent = true })
+vim.keymap.set("n", "<leader>avt", ":AvanteToggle", { desc = "Toggle Avante", silent = true })
+
+-- TELESCOPE
+vim.keymap.set("n", "<leader>tn", ":Telescope find_files cwd=~/.config/nvim", { desc = "Open Nvim Config Files", silent = true })
+vim.keymap.set("n", "<leader>to", ":Telescope find_files cwd=~/obsidian-vaults/obsidian-vault", { desc = "Open Obsidian Files", silent = true })
