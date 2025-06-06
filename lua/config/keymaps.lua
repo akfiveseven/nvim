@@ -74,13 +74,8 @@ vim.keymap.set("n", 'cL', 'c$')
 vim.keymap.set("n", 'dH', 'd^')
 vim.keymap.set("n", 'dL', 'd$')
 
-vim.keymap.set("n", "<leader>tt", ":ToggleTerm<CR>", { desc = "CMD enter command mode", silent = true })
-vim.keymap.set("t", "<C-k>", "<C-\\><C-n><C-w>k", { desc = "CMD enter command mode", silent = true })
-
--- AVANTE KEYMAPS
-vim.keymap.set("n", "<leader>ava", ":AvanteAsk<CR>", { desc = "Ask Avante", silent = true })
-vim.keymap.set("n", "<leader>avb", ":AvanteBuild<CR>", { desc = "Build with Avante", silent = true })
-vim.keymap.set("n", "<leader>avt", ":AvanteToggle<CR>", { desc = "Toggle Avante", silent = true })
+vim.keymap.set("n", "<leader>tt", ":ToggleTerm<CR>", { desc = "Open Terminal", silent = true })
+vim.keymap.set("t", "<C-k>", "<C-\\><C-n><C-w>k")
 
 -- TELESCOPE
 vim.keymap.set("n", "<leader>tn", ":Telescope find_files cwd=~/.config/nvim<CR>", { desc = "Open Nvim Config Files", silent = true })
