@@ -19,3 +19,6 @@ require("config.commands")
 --vim.api.nvim_set_hl(0, "LineNr", { fg = "#00ffff" })
 
 --require('colors.custom_theme').setup()
+
+
+vim.cmd(":TransparentDisable")
