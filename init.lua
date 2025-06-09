@@ -21,4 +21,4 @@ require("config.commands")
 --require('colors.custom_theme').setup()
 
 
-vim.cmd(":TransparentDisable")
+vim.cmd(":TransparentEnable")
