@@ -41,8 +41,8 @@ vim.keymap.set("n", "<leader>rwl", [[:s/<C-r><C-w>//gI<Left><Left><Left>]], { de
 vim.keymap.set("v", "<leader>rws", [[:s//gI<Left><Left><Left>]], { desc = "Replace word in selection" })
 
 vim.keymap.set("n", "<leader>lspi", [[:lua vim.diagnostic.open_float(0, { scope = "line" })<CR>]], { desc = "Lsp inspect" })
-vim.keymap.set("n", "<leader>lspe", [[:LspStart]], { desc = "Start Lsp" })
-vim.keymap.set("n", "<leader>lspd", [[:LspStart]], { desc = "Stop Lsp" })
+vim.keymap.set("n", "<leader>lspe", [[:LspStart<CR>]], { desc = "Start Lsp" })
+vim.keymap.set("n", "<leader>lspd", [[:LspStop<CR>]], { desc = "Stop Lsp" })
 
 -- VIM TMUX NAVIGATOR
 vim.keymap.set("n", "<c-h>", "<cmd>TmuxNavigateLeft<cr>")
