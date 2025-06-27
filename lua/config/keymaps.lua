@@ -76,3 +76,9 @@ vim.keymap.set("t", "<C-k>", "<C-\\><C-n><C-w>k")
 -- TELESCOPE
 vim.keymap.set("n", "<leader>tn", ":Telescope find_files cwd=~/.config/nvim<CR>", { desc = "Open Nvim Config Files", silent = true })
 vim.keymap.set("n", "<leader>to", ":Telescope find_files cwd=~/obsidian-vaults/obsidian-vault<CR>", { desc = "Open Obsidian Files", silent = true })
+
+vim.keymap.set("n", "<leader>gs", ":Git status<CR>", { desc = "Open :Git status", silent = true })
+vim.keymap.set("n", "<leader>gl", ":Git log<CR>", { desc = "Open :Git log", silent = true })
+vim.keymap.set("n", "<leader>ga", ":Git add .<CR>", { desc = "Run :Git add .", silent = false })
+
+
