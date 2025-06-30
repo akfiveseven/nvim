@@ -422,6 +422,11 @@ return {
           t("});")
         }),
 
+        s({ name = "filter", trig = "filter", dscr = { "Filters an array" } }, {
+          t("filter((item, index) => index % 2 === 0);"),
+        }),
+
+
         s("onClick", {
           t("onClick={"),
           i(1),
