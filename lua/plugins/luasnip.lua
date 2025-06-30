@@ -328,6 +328,7 @@ return {
           i(1),
           t("}")
         }),
+
         s("map", {
           t("map(("),
           i(1),
@@ -337,11 +338,13 @@ return {
           t({"", ""}),
           t("))")
         }),
+
         s("onClick", {
           t("onClick={"),
           i(1),
           t("}")
         }),
+
         s("useState", {
           t("const ["),
           i(1),
@@ -351,6 +354,18 @@ return {
           i(3),
           t(");")
         }),
+
+        s("default", {
+          t("export default function "),
+          i(1),
+          t("()"),
+          t(" {"),
+          t({"", "\t"}),
+          i(2),
+          t({"", ""}),
+          t("};")
+        }),
+
       })
 
 
