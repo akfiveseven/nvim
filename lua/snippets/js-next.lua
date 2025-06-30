@@ -8,8 +8,8 @@ local i = ls.insert_node
 --
 -- Example for Lua (adding to existing Python snippets)
 ls.add_snippets("lua", {
-  s("hello", {
-    t("Hello World!"),
+  s("use client", {
+    t("\"use client\""),
   }),
 })
 
