@@ -30,6 +30,35 @@ return {
         end
       end, { silent = true })
 
+      -- =======CSS SNIPPETS======= --
+
+      ls.add_snippets("css", {
+        s("root", {
+          t("myroot"),
+        }),
+      })
+
+
+      -- =======lua SNIPPETS======= --
+
+      ls.add_snippets("lua", {
+        s("snippetlua", {
+          t("s({ name = \""),
+          i(1),
+          t("\", trig = \""),
+          i(2),
+          t("\", dscr = { \""),
+          i(3),
+          t("\" } }, {"),
+          t({"", "\t"}),
+          t("t("),
+          i(4),
+          t("),"),
+          t({"", ""}),
+          t("}),"),
+        }),
+      })
+
       -- =======PYTHON SNIPPETS======= --
       ls.add_snippets("python", {
 
@@ -179,11 +208,6 @@ return {
         }),
       })
 
-      ls.add_snippets("css", {
-        s("root", {
-          t("myroot"),
-        }),
-      })
 
       ls.add_snippets("javascript", {
         s("mytest", {
