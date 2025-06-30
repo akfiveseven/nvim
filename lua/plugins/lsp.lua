@@ -41,14 +41,14 @@ return {
         function(server_name)
           require("lspconfig")[server_name].setup {
             capabilities = capabilities,
-            autostart = false,  -- 🔴 prevent auto-start
+            autostart = true,  -- 🔴 prevent auto-start
           }
         end,
 
         zls = function()
           local lspconfig = require("lspconfig")
           lspconfig.zls.setup({
-            autostart = false,  -- 🔴 disable autostart
+            autostart = true,  -- 🔴 disable autostart
             root_dir = lspconfig.util.root_pattern(".git", "build.zig", "zls.json"),
             settings = {
               zls = {
@@ -65,7 +65,7 @@ return {
         ["lua_ls"] = function()
           local lspconfig = require("lspconfig")
           lspconfig.lua_ls.setup {
-            autostart = false,  -- 🔴 disable autostart
+            autostart = true,  -- 🔴 disable autostart
             capabilities = capabilities,
             settings = {
               Lua = {
