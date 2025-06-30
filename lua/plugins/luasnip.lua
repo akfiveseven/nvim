@@ -426,7 +426,6 @@ return {
           t("filter((item, index) => index % 2 === 0);"),
         }),
 
-
         s("onClick", {
           t("onClick={"),
           i(1),
@@ -452,6 +451,16 @@ return {
           i(2),
           t({"", ""}),
           t("};")
+        }),
+
+        s({ name = "interface", trig = "interface", dscr = { "Create interface" } }, {
+          t("interface "),
+          i(1),
+          t(" {"),
+          t({"", "\t"}),
+          i(2),
+          t({"", ""}),
+          t("}")
         }),
 
       })
