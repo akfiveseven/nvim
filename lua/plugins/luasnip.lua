@@ -208,6 +208,7 @@ return {
         }),
       })
 
+      -- =======JAVASCRIPT SNIPPETS======= --
 
       ls.add_snippets("javascript", {
         s("mytest", {
@@ -412,13 +413,13 @@ return {
         }),
 
         s("map", {
-          t("map(("),
+          t("map((item"),
           i(1),
-          t(") => ("),
+          t(", index) => {"),
           t({"", "\t"}),
           i(2),
           t({"", ""}),
-          t("))")
+          t("});")
         }),
 
         s("onClick", {
