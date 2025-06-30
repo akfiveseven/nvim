@@ -27,6 +27,7 @@ return {
         vim.keymap.set('n', '<leader><leader>', ":Telescope buffers<CR>", { silent=true })
         vim.keymap.set('n', '<leader>tw', ":Telescope live_grep<CR>", { silent=true })
         vim.keymap.set('n', '<leader>tm', ":Telescope marks<CR>", { silent=true })
+        vim.keymap.set('n', '<leader>tf', ":Telescope find_files<CR>", { silent=true })
         -- vim.keymap.set('n', '<leader>vh', builtin.help_tags, {})
 
 
