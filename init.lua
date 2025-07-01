@@ -22,4 +22,3 @@ require("config.commands")
 
 
 vim.cmd(":TransparentEnable")
-vim.cmd(":lua print('hi')")
