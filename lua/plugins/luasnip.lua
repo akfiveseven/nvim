@@ -211,20 +211,15 @@ return {
       -- =======JAVASCRIPT SNIPPETS======= --
 
       ls.add_snippets("javascript", {
-        s("mytest", {
-          t("Hello")
-        }),
+      })
+
+      ls.add_snippets("javascriptreact", {
         s("commentJSX", {
           t("{/*"),
           t({"", ""}),
           t("*/}"),
         }),
-      })
 
-      ls.add_snippets("javascriptreact", {
-        s("commentJSX", {
-          t("{/**/}")
-        }),
         s("component", {
           t("const "),
           i(1),
@@ -242,36 +237,6 @@ return {
           t({ "", "\t" }),
           t(")"),
           t({ "", "};" }),
-        }),
-
-        s("div", {
-          t("<div className=\""),
-          i(1),
-          t("\">"),
-          t({ "", "\t" }),
-          i(0),
-          t({ "", "" }),
-          t("</div>"),
-        }),
-
-        s("span", {
-          t("<div className=\""),
-          i(1),
-          t("\">"),
-          t({ "", "\t" }),
-          i(0),
-          t({ "", "" }),
-          t("</div>"),
-        }),
-
-        s("span", {
-          t("<div className=\""),
-          i(1),
-          t("\">"),
-          t({ "", "\t" }),
-          i(0),
-          t({ "", "" }),
-          t("</div>"),
         }),
 
         s("useEffect", {
@@ -335,9 +300,25 @@ return {
           t({"", ""}),
           t("};")
         }),
+
+        s({ name = "div", trig = "div", dscr = { "div" } }, {
+          t("<div className=\""),
+          i(1),
+          t("\">"),
+          t({"", ""}),
+          t("</div>")
+        }),
       })
 
       ls.add_snippets("typescriptreact", {
+        s({ name = "div", trig = "div", dscr = { "div" } }, {
+          t("<div"),
+          i(1),
+          t(">"),
+          t({"", ""}),
+          t("</div>")
+        }),
+
         s("component", {
           t("const "),
           i(1),
@@ -347,44 +328,10 @@ return {
           t({ "", "\t" }),
           t("return ("),
           t({ "", "\t\t" }),
-          t("<>"),
-          t({ "", "\t\t\t" }),
           i(0),
-          t({ "", "\t\t" }),
-          t("</>"),
           t({ "", "\t" }),
-          t(")"),
+          t(");"),
           t({ "", "};" }),
-        }),
-
-        s("div", {
-          t("<div className=\""),
-          i(1),
-          t("\">"),
-          t({ "", "\t" }),
-          i(0),
-          t({ "", "" }),
-          t("</div>"),
-        }),
-
-        s("span", {
-          t("<div className=\""),
-          i(1),
-          t("\">"),
-          t({ "", "\t" }),
-          i(0),
-          t({ "", "" }),
-          t("</div>"),
-        }),
-
-        s("span", {
-          t("<div className=\""),
-          i(1),
-          t("\">"),
-          t({ "", "\t" }),
-          i(0),
-          t({ "", "" }),
-          t("</div>"),
         }),
 
         s("useEffect", {
@@ -448,7 +395,11 @@ return {
           t("()"),
           t(" {"),
           t({"", "\t"}),
+          t("return ("),
+          t({"", "\t\t"}),
           i(2),
+          t({"", "\t"}),
+          t(");"),
           t({"", ""}),
           t("};")
         }),

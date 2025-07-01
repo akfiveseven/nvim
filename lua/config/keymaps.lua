@@ -57,6 +57,7 @@ vim.keymap.set('n', '<leader>u', vim.cmd.UndotreeToggle, { desc = "Toggle Undo T
 vim.keymap.set('n', '<leader>cs', ':colorscheme ', { desc = "Choose theme" })
 
 vim.keymap.set('n', '<leader>K', '<C-w>K', { desc = "Switch panes vertically" })
+vim.keymap.set('n', '<leader>da', ':Dashboard', { desc = "Open dashboard" })
 vim.keymap.set('n', '<leader>H', '<C-w>H', { desc = "Switch panes horizontally" })
 
 vim.keymap.set('n', '<Down>', '<C-d>zz')
