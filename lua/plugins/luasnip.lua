@@ -39,10 +39,11 @@ return {
       })
 
 
-      -- =======lua SNIPPETS======= --
+
+      -- =======lua snippets======= --
 
       ls.add_snippets("lua", {
-        s("snippetlua", {
+        s({ name = "snippet-luasnip", trig = "snippet", dscr = { "Define a luasnip snippet." } }, {
           t("s({ name = \""),
           i(1),
           t("\", trig = \""),
@@ -60,31 +61,36 @@ return {
       })
 
       -- =======PYTHON SNIPPETS======= --
+
       ls.add_snippets("python", {
 
-        -- DSA Snippets
-        s({ name = "test run", trig = "dfs", dscr = { "Depth-First Search", "Depth-first search on a graph in python" } }, {
-            t('test'), t({"", "    "}), i(0),
-        }),
-
         -- Core snippets
-        s({ trig = "main", dscr = { "Python module guard", "Executes block only when run as a script" } }, {
+        s({ name = "main", trig = "main", dscr = { "python main module guard" } }, {
             t('if __name__ == "__main__":'), t({"", "\t"}), i(0),
         }),
 
-        s("if", {
+        s({ name = "if", trig = "if", dscr = { "if statement" }}, {
           t("if "), i(1), t(":"), t({"", "\t"}), i(2)
         }),
 
-        s("else", {
+        s({name = "else", trig = "else", dscr = { "else statement" } }, {
           t("else:"), t({"", "\t"}), i(1)
         }),
 
-        s("elif", {
+        s({name = "elif", trig = "elif", dscr = { "elif statement" } }, {
           t("elif "), i(1), t(":"), t({"", "\t"}), i(2)
         }),
 
-        s("forRange", {
+        s({ name = "for-dict", trig = "for", dscr = { "Iterate over dictionary" } }, {
+          t("for key, value in "),
+          i(1),
+          t(".items():"),
+          t({"", "\t"}),
+          t("print(f\"{key}: {value}\")"),
+          i(2)
+        }),
+
+        s({ name = "for-range", trig = "for", dscr = { "Range-based for loop" } }, {
           t("for "),
           i(1),
           t(" in range("),
@@ -94,18 +100,8 @@ return {
           i(3)
         }),
 
-        s("forDict", {
-          -- for key, value in person.items():
-          -- print(f"{key}: {value}")
-          t("for key, value in "),
-          i(1),
-          t(".items():"),
-          t({"", "\t"}),
-          t("print(f\"{key}: {value}\")"),
-          i(2)
-        }),
 
-        s("function", {
+        s({ name = "function-definition", trig = "function", dscr = { "Define a function." } }, {
           t("def "),
           i(1),
           t("("),
@@ -115,28 +111,31 @@ return {
           i(3)
         }),
 
-        s("list", {
+        s({ name = "list", trig = "list", dscr = { "Define a list." } }, {
           i(1),
           t(" = ["),
           i(2),
           t("]")
         }),
 
-        s("tuple", {
+        s({ name = "tuple", trig = "tuple", dscr = { "Insert a dummy tuple." } }, {
           t("point = (3, 4)"),
           t({"", ""}),
-          t("x, y = point # tuple unpacking")
+          t({"", ""}),
+          t("# tuple unpacking"),
+          t({"", ""}),
+          t("x, y = point")
         }),
 
-        s("set", {
+        s({ name = "set", trig = "set", dscr = { "Insert a dummy set." } }, {
           t("unique_vals = {1, 2, 3}")
         }),
 
-        s("dictionary", {
+        s({ name = "dictionary", trig = "dictionary", dscr = { "Insert a dummy dictionary." } }, {
           t("person = {\"name\": \"Alice\", \"age\": 30}")
         }),
 
-        s("class", {
+        s({ name = "class", trig = "class", dscr = { "Define a class." } }, {
           t("class "),
           i(1),
           t(":"),
@@ -148,25 +147,7 @@ return {
           i(3)
         }),
 
-        s("inherit", {
-          t("class Animal:"),
-          t({"", "\t"}),
-          t("def __init__(self, name):"),
-          t({"", "\t\t"}),
-          t("self.name = name"),
-          t({"", "\t"}),
-          t("def speak(self):"),
-          t({"", "\t\t"}),
-          t("return f\"{self.name} makes a sound\""),
-          t({"", ""}),
-          t("class Dog(Animal):"),
-          t({"", "\t"}),
-          t("def speak(self):"),
-          t({"", "\t\t"}),
-          t("return f\"{self.name} barks\""),
-        }),
-
-        s("try", {
+        s({ name = "try", trig = "try", dscr = { "Define a try statement." } }, {
           t("try:"),
           t({"", "\t"}),
           i(2),
@@ -182,30 +163,21 @@ return {
           i(4)
         }),
 
-        s("type", {
+        s({ name = "type", trig = "type", dscr = { "type() function" } }, {
           t("type("),
           i(1),
           t(")")
         }),
-        s("type", {
+
+        s({ name = "type-instance", trig = "instance", dscr = { "Check instance/type of a object." } }, {
           t("isinstance(\"hi\", str) # True"),
         }),
 
       })
 
-      -- Traverse a Map in C++
-      -- unordered_map<string, int>
+      -- ======= cpp snippets ======= --
 
       ls.add_snippets("cpp", {
-        s("myTraverseMap", {
-          t("unordered_map<string, int> map;"),
-          t({ "", "" }),
-          t("for (const auto& pair : map) {"),
-          t({ "", "\t" }),
-          i(1),
-          t({ "", "" }),
-          t("}"),
-        }),
       })
 
       -- =======JAVASCRIPT SNIPPETS======= --
@@ -214,103 +186,7 @@ return {
       })
 
       ls.add_snippets("javascriptreact", {
-        s("commentJSX", {
-          t("{/*"),
-          t({"", ""}),
-          t("*/}"),
-        }),
 
-        s("component", {
-          t("const "),
-          i(1),
-          t(" = ("),
-          i(2),
-          t(") => {"),
-          t({ "", "\t" }),
-          t("return ("),
-          t({ "", "\t\t" }),
-          t("<>"),
-          t({ "", "\t\t\t" }),
-          i(0),
-          t({ "", "\t\t" }),
-          t("</>"),
-          t({ "", "\t" }),
-          t(")"),
-          t({ "", "};" }),
-        }),
-
-        s("useEffect", {
-          t("useEffect(() => {"),
-          t({ "", "\t" }),
-          t("// Side effect logic"),
-          t({ "", "\t" }),
-          t("return () => {"),
-          t({ "", "\t\t" }),
-          t("// Optional cleanup logic"),
-          t({ "", "\t" }),
-          t("};"),
-          t({ "", "" }),
-          t("}, []);"),
-
-        }),
-        s("className", {
-          t("className=\""),
-          i(1),
-          t("\"")
-        }),
-        s("key", {
-          t("key={"),
-          i(1),
-          t("}")
-        }),
-
-        s("map", {
-          t("map(("),
-          i(1),
-          t(") => ("),
-          t({"", "\t"}),
-          i(2),
-          t({"", ""}),
-          t("))")
-        }),
-
-        s("onClick", {
-          t("onClick={"),
-          i(1),
-          t("}")
-        }),
-
-        s("useState", {
-          t("const ["),
-          i(1),
-          t(", "),
-          i(2),
-          t("] = useState("),
-          i(3),
-          t(");")
-        }),
-
-        s("default", {
-          t("export default function "),
-          i(1),
-          t("()"),
-          t(" {"),
-          t({"", "\t"}),
-          i(2),
-          t({"", ""}),
-          t("};")
-        }),
-
-        s({ name = "div", trig = "div", dscr = { "div" } }, {
-          t("<div className=\""),
-          i(1),
-          t("\">"),
-          t({"", ""}),
-          t("</div>")
-        }),
-      })
-
-      ls.add_snippets("typescriptreact", {
         s({ name = "div", trig = "div", dscr = { "div" } }, {
           t("<div"),
           i(1),
@@ -319,7 +195,7 @@ return {
           t("</div>")
         }),
 
-        s("component", {
+        s({ name = "arrow-function", trig = "function", dscr = { "Create an arrow function." } }, {
           t("const "),
           i(1),
           t(" = ("),
@@ -334,7 +210,7 @@ return {
           t({ "", "};" }),
         }),
 
-        s("useEffect", {
+        s({ name = "useEffect", trig = "useEffect", dscr = { "Create a useEffect block." } }, {
           t("useEffect(() => {"),
           t({ "", "\t" }),
           t("// Side effect logic"),
@@ -346,20 +222,15 @@ return {
           t("};"),
           t({ "", "" }),
           t("}, []);"),
-
         }),
-        s("className", {
+
+        s({ name = "className", trig = "className", dscr = { "Add classname attribute." } }, {
           t("className=\""),
           i(1),
           t("\"")
         }),
-        s("key", {
-          t("key={"),
-          i(1),
-          t("}")
-        }),
 
-        s("map", {
+        s({ name = "map", trig = "map", dscr = { "Iterate over a list (array)." } }, {
           t("map((item"),
           i(1),
           t(", index) => {"),
@@ -373,13 +244,7 @@ return {
           t("filter((item, index) => index % 2 === 0);"),
         }),
 
-        s("onClick", {
-          t("onClick={"),
-          i(1),
-          t("}")
-        }),
-
-        s("useState", {
+        s({ name = "useState", trig = "useState", expr = {  } }, {
           t("const ["),
           i(1),
           t(", "),
@@ -389,7 +254,7 @@ return {
           t(");")
         }),
 
-        s("default", {
+        s({ name = "default", trig = "default", dscr = { "Export default function." } }, {
           t("export default function "),
           i(1),
           t("()"),
@@ -413,6 +278,101 @@ return {
           t({"", ""}),
           t("}")
         }),
+
+      ls.add_snippets("typescriptreact", {
+
+        s({ name = "div", trig = "div", dscr = { "div" } }, {
+          t("<div"),
+          i(1),
+          t(">"),
+          t({"", ""}),
+          t("</div>")
+        }),
+
+        s({ name = "arrow-function", trig = "function", dscr = { "Create an arrow function." } }, {
+          t("const "),
+          i(1),
+          t(" = ("),
+          i(2),
+          t(") => {"),
+          t({ "", "\t" }),
+          t("return ("),
+          t({ "", "\t\t" }),
+          i(0),
+          t({ "", "\t" }),
+          t(");"),
+          t({ "", "};" }),
+        }),
+
+        s({ name = "useEffect", trig = "useEffect", dscr = { "Create a useEffect block." } }, {
+          t("useEffect(() => {"),
+          t({ "", "\t" }),
+          t("// Side effect logic"),
+          t({ "", "\t" }),
+          t("return () => {"),
+          t({ "", "\t\t" }),
+          t("// Optional cleanup logic"),
+          t({ "", "\t" }),
+          t("};"),
+          t({ "", "" }),
+          t("}, []);"),
+        }),
+
+        s({ name = "className", trig = "className", dscr = { "Add classname attribute." } }, {
+          t("className=\""),
+          i(1),
+          t("\"")
+        }),
+
+        s({ name = "map", trig = "map", dscr = { "Iterate over a list (array)." } }, {
+          t("map((item"),
+          i(1),
+          t(", index) => {"),
+          t({"", "\t"}),
+          i(2),
+          t({"", ""}),
+          t("});")
+        }),
+
+        s({ name = "filter", trig = "filter", dscr = { "Filters an array" } }, {
+          t("filter((item, index) => index % 2 === 0);"),
+        }),
+
+        s({ name = "useState", trig = "useState", expr = {  } }, {
+          t("const ["),
+          i(1),
+          t(", "),
+          i(2),
+          t("] = useState("),
+          i(3),
+          t(");")
+        }),
+
+        s({ name = "default", trig = "default", dscr = { "Export default function." } }, {
+          t("export default function "),
+          i(1),
+          t("()"),
+          t(" {"),
+          t({"", "\t"}),
+          t("return ("),
+          t({"", "\t\t"}),
+          i(2),
+          t({"", "\t"}),
+          t(");"),
+          t({"", ""}),
+          t("};")
+        }),
+
+        s({ name = "interface", trig = "interface", dscr = { "Create interface" } }, {
+          t("interface "),
+          i(1),
+          t(" {"),
+          t({"", "\t"}),
+          i(2),
+          t({"", ""}),
+          t("}")
+        }),
+
 
       })
 
