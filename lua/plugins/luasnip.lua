@@ -279,6 +279,8 @@ return {
           t("}")
         }),
 
+      })
+
       ls.add_snippets("typescriptreact", {
 
         s({ name = "div", trig = "div", dscr = { "div" } }, {
@@ -372,7 +374,6 @@ return {
           t({"", ""}),
           t("}")
         }),
-
 
       })
 
