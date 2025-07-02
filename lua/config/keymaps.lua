@@ -5,12 +5,11 @@ vim.keymap.set("n", ";", ":", { desc = "CMD enter command mode" })
 -- Default keymaps that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/keymaps.lua
 -- Add any additional keymaps here
 
-vim.keymap.set("n", "<C-b>", "<C-^>", { desc = "Goto previous buffer" })
 
 vim.keymap.set("n", "<leader>x", vim.cmd.bd, { desc = "Delete buffer" })
 vim.keymap.set("n", "<leader>Q", vim.cmd.qall, { desc = "Quit Neovim without saving" })
-vim.keymap.set("n", "<tab>", vim.cmd.bn, { desc = "Goto next buffer" })
-vim.keymap.set("n", "<S-tab>", vim.cmd.bp, { desc = "Goto previous buffer" })
+vim.keymap.set("n", "<tab>", "<C-^>", { desc = "Goto last buffer" })
+-- vim.keymap.set("n", "<S-tab>", vim.cmd.bp, { desc = "Goto previous buffer" })
 
 vim.keymap.set({"n", "v"}, "<leader>p", [["+p]], { desc = "Paste from system clipboard after cursor" })
 vim.keymap.set({"n", "v"}, "<leader>P", [["+P]], { desc = "Paste from system clipboard before cursor" })
@@ -76,7 +75,7 @@ vim.keymap.set("t", "<C-k>", "<C-\\><C-n><C-w>k")
 
 -- TELESCOPE
 vim.keymap.set("n", "<leader>tn", ":Telescope find_files cwd=~/.config/nvim<CR>", { desc = "Open Nvim Config Files", silent = true })
-vim.keymap.set("n", "<leader>to", ":Telescope find_files cwd=~/obsidian-vaults/obsidian-vault<CR>", { desc = "Open Obsidian Files", silent = true })
+-- vim.keymap.set("n", "<leader>to", ":Telescope find_files cwd=~/obsidian-vaults/obsidian-vault<CR>", { desc = "Open Obsidian Files", silent = true })
 
 vim.keymap.set("n", "<leader>gs", ":Git status<CR>", { desc = "Open :Git status", silent = true })
 vim.keymap.set("n", "<leader>gl", ":Git log<CR>", { desc = "Open :Git log", silent = true })

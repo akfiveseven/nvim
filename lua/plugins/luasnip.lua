@@ -42,23 +42,23 @@ return {
 
       -- =======lua snippets======= --
 
-      ls.add_snippets("lua", {
-        s({ name = "snippet-luasnip", trig = "snippet", dscr = { "Define a luasnip snippet." } }, {
-          t("s({ name = \""),
-          i(1),
-          t("\", trig = \""),
-          i(2),
-          t("\", dscr = { \""),
-          i(3),
-          t("\" } }, {"),
-          t({"", "\t"}),
-          t("t("),
-          i(4),
-          t("),"),
-          t({"", ""}),
-          t("}),"),
-        }),
-      })
+      -- ls.add_snippets("lua", {
+      --   s({ name = "snippet-luasnip", trig = "snippet", dscr = { "Define a luasnip snippet." } }, {
+      --     t("s({ name = \""),
+      --     i(1),
+      --     t("\", trig = \""),
+      --     i(2),
+      --     t("\", dscr = { \""),
+      --     i(3),
+      --     t("\" } }, {"),
+      --     t({"", "\t"}),
+      --     t("t("),
+      --     i(4),
+      --     t("),"),
+      --     t({"", ""}),
+      --     t("}),"),
+      --   }),
+      -- })
 
       -- =======PYTHON SNIPPETS======= --
 
