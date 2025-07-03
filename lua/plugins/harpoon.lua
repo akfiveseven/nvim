@@ -40,7 +40,7 @@ return {
       harpoon.ui:toggle_quick_menu(harpoon:list())
     end)
 
-    vim.keymap.set("n", "<C-b>", function()
+    vim.keymap.set("n", "<C-p>", function()
       toggle_telescope(harpoon:list())
     end, { desc = "Open harpoon window" })
 

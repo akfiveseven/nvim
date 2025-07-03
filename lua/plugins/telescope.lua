@@ -11,7 +11,7 @@ return {
         require('telescope').setup({})
 
         local builtin = require('telescope.builtin')
-        vim.keymap.set('n', '<C-p>', ':BufferSwitch<CR>')
+        vim.keymap.set('n', '<C-b>', ':BufferSwitch<CR>')
         vim.keymap.set('n', '<leader>tg', builtin.git_files, {})
         -- vim.keymap.set('n', '<leader>pws', function()
         --     local word = vim.fn.expand("<cword>")
@@ -24,7 +24,7 @@ return {
         -- vim.keymap.set('n', '<leader>tw', function()
         --     builtin.grep_string({ search = vim.fn.input("Grep > ") })
         -- end)
-        vim.keymap.set('n', '<leader><leader>', ":Telescope buffers<CR>", { silent=true })
+        -- vim.keymap.set('n', '<leader><leader>', ":Telescope buffers<CR>", { silent=true })
         vim.keymap.set('n', '<leader>tw', ":Telescope live_grep<CR>", { silent=true })
         vim.keymap.set('n', '<leader>tm', ":Telescope marks<CR>", { silent=true })
         vim.keymap.set('n', '<leader>tf', ":Telescope find_files<CR>", { silent=true })
@@ -161,7 +161,8 @@ return {
         vim.opt.tabline = '%!v:lua.custom_tabline()'
 
 
-        vim.keymap.set('n', '<leader><leader>', ':BufferSwitch<CR>', { noremap = true, silent = true })
+        -- vim.keymap.set('n', '<leader><leader>', ':BufferSwitch<CR>', { noremap = true, silent = true })
+        vim.keymap.set('n', '<leader><leader>', ':Telescope find_files<CR>', { noremap = true, silent = true })
 
         vim.keymap.set('n', '<leader>to', ':NewTabFiles<CR>', { noremap = true, silent = true })
         vim.keymap.set('n', '<leader>tr', ':TabRename ', { noremap = true })

@@ -9,6 +9,7 @@ vim.keymap.set("n", ";", ":", { desc = "CMD enter command mode" })
 vim.keymap.set("n", "<leader>x", vim.cmd.bd, { desc = "Delete buffer" })
 vim.keymap.set("n", "<leader>Q", vim.cmd.qall, { desc = "Quit Neovim without saving" })
 vim.keymap.set("n", "<tab>", "<C-^>", { desc = "Goto last buffer" })
+vim.keymap.set("n", "<S-tab>", "``", { desc = "Goto last mark" })
 -- vim.keymap.set("n", "<S-tab>", vim.cmd.bp, { desc = "Goto previous buffer" })
 
 vim.keymap.set({"n", "v"}, "<leader>p", [["+p]], { desc = "Paste from system clipboard after cursor" })
