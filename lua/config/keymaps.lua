@@ -34,6 +34,7 @@ vim.keymap.set("x", "<leader>dp", [["_dP]], { desc = "Paste & keep yank content"
 
 -- deletes without yanking
 vim.keymap.set({"n", "v"}, "<leader>dv", [["_d]], { desc = "Delete without yanking" })
+vim.keymap.set({"n", "v"}, "<leader>jq", [[:%!jq .<CR>]], { desc = "Format json", silent = true })
 
 -- search and replace globally the word the cursor is on
 vim.keymap.set("n", "<leader>rwg", [[:%s/<C-r><C-w>//gI<Left><Left><Left>]], { desc = "Replace word under cursor globally" })
