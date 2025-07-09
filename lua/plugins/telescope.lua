@@ -11,7 +11,7 @@ return {
         require('telescope').setup({})
 
         local builtin = require('telescope.builtin')
-        vim.keymap.set('n', '<C-b>', ':BufferSwitch<CR>')
+        vim.keymap.set('n', '<leader>tb', ':BufferSwitch<CR>')
         vim.keymap.set('n', '<leader>tg', builtin.git_files, {})
         -- vim.keymap.set('n', '<leader>pws', function()
         --     local word = vim.fn.expand("<cword>")
