@@ -36,11 +36,11 @@ return {
         :find()
     end
 
-    vim.keymap.set("n", "<C-e>", function()
+    vim.keymap.set("n", "<leader>he", function()
       harpoon.ui:toggle_quick_menu(harpoon:list())
     end)
 
-    vim.keymap.set("n", "<C-p>", function()
+    vim.keymap.set("n", "<leader>hh", function()
       toggle_telescope(harpoon:list())
     end, { desc = "Open harpoon window" })
 
@@ -56,9 +56,16 @@ return {
             harpoon:list():prepend()
     end)
 
-    vim.keymap.set("n", "<leader>a", function()
-            harpoon:list():add()
-    end)
+    --== HarpoonAdd
+    vim.api.nvim_create_user_command('HarpoonAdd', function()
+      harpoon:list():add()
+    end, {})
+
+    --== HarpoonAdd
+    vim.api.nvim_create_user_command('HarpoonPreprend', function()
+      harpoon:list():add()
+    end, {})
+
 
     -- vim.keymap.set("n", "<C-e>", function()
     -- harpoon.ui:toggle_quick_menu(harpoon:list())

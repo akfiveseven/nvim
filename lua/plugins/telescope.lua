@@ -11,8 +11,8 @@ return {
         require('telescope').setup({})
 
         local builtin = require('telescope.builtin')
-        vim.keymap.set('n', '<leader>tb', ':BufferSwitch<CR>')
-        vim.keymap.set('n', '<leader>tg', builtin.git_files, {})
+        vim.keymap.set('n', '<leader>tb', ':BufferSwitch<CR>', { desc = "Telescope buffers" })
+        vim.keymap.set('n', '<leader>tg', builtin.git_files, { desc = "Telescope git files" })
         -- vim.keymap.set('n', '<leader>pws', function()
         --     local word = vim.fn.expand("<cword>")
         --     builtin.grep_string({ search = word })
@@ -25,9 +25,9 @@ return {
         --     builtin.grep_string({ search = vim.fn.input("Grep > ") })
         -- end)
         -- vim.keymap.set('n', '<leader><leader>', ":Telescope buffers<CR>", { silent=true })
-        vim.keymap.set('n', '<leader>tw', ":Telescope live_grep<CR>", { silent=true })
-        vim.keymap.set('n', '<leader>tm', ":Telescope marks<CR>", { silent=true })
-        vim.keymap.set('n', '<leader>tf', ":Telescope find_files<CR>", { silent=true })
+        vim.keymap.set('n', '<leader>tw', ":Telescope live_grep<CR>", { desc = "Telescope search text" })
+        vim.keymap.set('n', '<leader>tm', ":Telescope marks<CR>", { desc = "Telescope marks" })
+        vim.keymap.set('n', '<leader>tf', ":Telescope find_files<CR>", { desc = "Telescope search files" })
         -- vim.keymap.set('n', '<leader>vh', builtin.help_tags, {})
 
 

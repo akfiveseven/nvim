@@ -1,3 +1,4 @@
+--== LuaSnipList
 vim.api.nvim_create_user_command('LuaSnipList', function()
   local ls = require("luasnip")
 
@@ -11,36 +12,33 @@ vim.api.nvim_create_user_command('LuaSnipList', function()
   end
 end, {})
 
+--== TabIndentFour
 vim.api.nvim_create_user_command('TabIndentFour', function(opts)
   vim.opt.tabstop = 4
   vim.opt.softtabstop = 4
   vim.opt.shiftwidth = 4
 end, { nargs = '?' })
 
+--== NoLineNumbers
 vim.api.nvim_create_user_command('NoLineNumbers', function(opts)
   vim.cmd('setlocal nonumber norelativenumber')
 end, { nargs = '?' })
 
+--== TabIndentTwo
 vim.api.nvim_create_user_command('TabIndentTwo', function(opts)
   vim.opt.tabstop = 2
   vim.opt.softtabstop = 2
   vim.opt.shiftwidth = 2
 end, { nargs = '?' })
 
--- Add this to your init.lua or another config file
-vim.api.nvim_create_user_command('SnippetsLoadComputerCraft', function()
-  vim.cmd('luafile ~/.config/nvim-config-1/lua/snippets/computercraft.lua')
-end, {})
-
+--== MarksDeleteAll
 vim.api.nvim_create_user_command('MarksDeleteAll', function()
   vim.cmd('demarks a-z')
   vim.cmd('demarks A-Z')
   vim.cmd('demarks 0-9')
 end, {})
 
--- Create a command to save a register to a file (append mode)
--- :MacroSaveRegister <register>
--- :MacroSaveRegister a
+--== MacroSaveRegister <register>
 vim.api.nvim_create_user_command(
   'MacroSaveRegister',
   function(opts)
@@ -49,7 +47,7 @@ vim.api.nvim_create_user_command(
       print("Error: No register specified")
       return
     end
-    
+
     -- Open in append mode ('a' instead of 'w')
     local file = io.open('macro.lua', 'a')
     if file then
@@ -102,7 +100,7 @@ function OpenAndExecute(directory)
   })
 end
 
--- Create a command to call this function
+--== LoadSnippets
 vim.api.nvim_create_user_command('LoadSnippets', function(opts)
   OpenAndExecute(opts.args)
 end, {
@@ -111,7 +109,7 @@ end, {
   complete = 'dir'
 })
 
-vim.keymap.set("n", "<leader>lsf", ":LoadSnippets<CR>")
+vim.keymap.set("n", "<leader>lsf", ":LoadSnippets<CR>", { desc = "Load Custom Snippets" })
 
 -- Example keymap (optional)
 -- vim.api.nvim_set_keymap('n', '<leader>le', 

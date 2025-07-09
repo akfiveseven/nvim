@@ -6,7 +6,7 @@ vim.keymap.set("n", ";", ":", { desc = "CMD enter command mode" })
 -- Add any additional keymaps here
 
 
-vim.keymap.set("n", "<leader>x", vim.cmd.bd, { desc = "Delete buffer" })
+vim.keymap.set("n", "<leader>x", vim.cmd.bd, { desc = "Close buffer" })
 vim.keymap.set("n", "<leader>Q", vim.cmd.qall, { desc = "Quit Neovim without saving" })
 vim.keymap.set("n", "<tab>", "gt", { desc = "Goto next tab" })
 -- vim.keymap.set("n", "<C-b>", "<C-^>", { desc = "Goto last buffer" })
@@ -17,7 +17,7 @@ vim.keymap.set({"n", "v"}, "<leader>p", [["+p]], { desc = "Paste from system cli
 vim.keymap.set({"n", "v"}, "<leader>P", [["+P]], { desc = "Paste from system clipboard before cursor" })
 vim.keymap.set({"n", "v"}, "<leader>y", [["+y]], { desc = "Yank to system clipboard" })
 
-vim.keymap.set({"n", "i", "v"}, "<C-i>", [[:resize +10<CR>:vertical resize +10<CR>]], { desc = "Increase window size", silent = true })
+vim.keymap.set({"n", "i", "v"}, "<C-p>", [[:resize +10<CR>:vertical resize +10<CR>]], { desc = "Increase window size", silent = true })
 
 -- allows moving selected section up or down in code
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv", { desc = "Move code block down" })
@@ -35,16 +35,16 @@ vim.keymap.set("x", "<leader>dp", [["_dP]], { desc = "Paste & keep yank content"
 
 -- deletes without yanking
 vim.keymap.set({"n", "v"}, "<leader>dv", [["_d]], { desc = "Delete without yanking" })
-vim.keymap.set({"n", "v"}, "<leader>jq", [[:%!jq .<CR>]], { desc = "Format json", silent = true })
+vim.keymap.set({"n", "v"}, "<leader>jq", [[:%!jq .<CR>]], { desc = "Format json" })
 
 -- search and replace globally the word the cursor is on
 vim.keymap.set("n", "<leader>rwg", [[:%s/<C-r><C-w>//gI<Left><Left><Left>]], { desc = "Replace word under cursor globally" })
 vim.keymap.set("n", "<leader>rwl", [[:s/<C-r><C-w>//gI<Left><Left><Left>]], { desc = "Replace word under cursor current line" })
 vim.keymap.set("v", "<leader>rws", [[:s//gI<Left><Left><Left>]], { desc = "Replace word in selection" })
 
-vim.keymap.set("n", "<leader>lspi", [[:lua vim.diagnostic.open_float(0, { scope = "line" })<CR>]], { desc = "Lsp inspect" })
-vim.keymap.set("n", "<leader>lspe", [[:LspStart<CR>]], { desc = "Start Lsp" })
-vim.keymap.set("n", "<leader>lspd", [[:LspStop<CR>]], { desc = "Stop Lsp" })
+vim.keymap.set("n", "<leader>li", [[:lua vim.diagnostic.open_float(0, { scope = "line" })<CR>]], { desc = "Lsp inspect" })
+-- vim.keymap.set("n", "<leader>lspe", [[:LspStart<CR>]], { desc = "Start Lsp" })
+-- vim.keymap.set("n", "<leader>lspd", [[:LspStop<CR>]], { desc = "Stop Lsp" })
 
 -- VIM TMUX NAVIGATOR
 vim.keymap.set("n", "<c-h>", "<cmd>TmuxNavigateLeft<cr>")
@@ -81,8 +81,8 @@ vim.keymap.set("n", "<leader>tn", ":Telescope find_files cwd=~/.config/nvim<CR>"
 -- vim.keymap.set("n", "<leader>to", ":Telescope find_files cwd=~/obsidian-vaults/obsidian-vault<CR>", { desc = "Open Obsidian Files", silent = true })
 vim.keymap.set("n", "<leader>oo", ":Telescope find_files cwd=~/obsidian-vaults/obsidian-vault<CR>", { desc = "Open Obsidian Files", silent = true })
 
-vim.keymap.set("n", "<leader>gs", ":Git status<CR>", { desc = "Open :Git status", silent = true })
-vim.keymap.set("n", "<leader>gl", ":Git log<CR>", { desc = "Open :Git log", silent = true })
-vim.keymap.set("n", "<leader>ga", ":Git add .<CR>", { desc = "Run :Git add .", silent = false })
+vim.keymap.set("n", "<leader>gs", ":Git status<CR>", { desc = "Open :Git status" })
+vim.keymap.set("n", "<leader>gl", ":Git log<CR>", { desc = "Open :Git log" })
+vim.keymap.set("n", "<leader>ga", ":Git add ", { desc = "Run :Git add .", silent = false })
 
 
