@@ -42,23 +42,23 @@ return {
 
       -- =======lua snippets======= --
 
-      -- ls.add_snippets("lua", {
-      --   s({ name = "snippet-luasnip", trig = "snippet", dscr = { "Define a luasnip snippet." } }, {
-      --     t("s({ name = \""),
-      --     i(1),
-      --     t("\", trig = \""),
-      --     i(2),
-      --     t("\", dscr = { \""),
-      --     i(3),
-      --     t("\" } }, {"),
-      --     t({"", "\t"}),
-      --     t("t("),
-      --     i(4),
-      --     t("),"),
-      --     t({"", ""}),
-      --     t("}),"),
-      --   }),
-      -- })
+      ls.add_snippets("lua", {
+        s({ name = "snippet-luasnip", trig = "snippet", dscr = { "Define a luasnip snippet." } }, {
+          t("s({ name = \""),
+          i(1),
+          t("\", trig = \""),
+          i(2),
+          t("\", dscr = { \""),
+          i(3),
+          t("\" } }, {"),
+          t({"", "\t"}),
+          t("t("),
+          i(4),
+          t("),"),
+          t({"", ""}),
+          t("}),"),
+        }),
+      })
 
       -- =======PYTHON SNIPPETS======= --
 
@@ -281,6 +281,8 @@ return {
 
       })
 
+      --== TYPESCRIPT snippets
+
       ls.add_snippets("typescriptreact", {
 
         s({ name = "div", trig = "div", dscr = { "div" } }, {
@@ -304,6 +306,24 @@ return {
           t({ "", "\t" }),
           t(");"),
           t({ "", "};" }),
+        }),
+
+        s({ name = "if statement", trig = "if", dscr = { "Create an if statement" } }, {
+          t("if ("),
+          i(1),
+          t(") {"),
+          t({"", "\t"}),
+          i(2),
+          t("}")
+        }),
+
+        s({ name = "else if statement", trig = "else if", dscr = { "Create an else if statement" } }, {
+          t("else if ("),
+          i(1),
+          t(") {"),
+          t({"", "\t"}),
+          i(2),
+          t("}")
         }),
 
         s({ name = "useEffect", trig = "useEffect", dscr = { "Create a useEffect block." } }, {

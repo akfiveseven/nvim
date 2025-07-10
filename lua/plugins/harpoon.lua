@@ -38,11 +38,11 @@ return {
 
     vim.keymap.set("n", "<leader>he", function()
       harpoon.ui:toggle_quick_menu(harpoon:list())
-    end)
+    end, { desc = "Harpoon Quick Menu" })
 
     vim.keymap.set("n", "<leader>hh", function()
       toggle_telescope(harpoon:list())
-    end, { desc = "Open harpoon window" })
+    end, { desc = "Harpoon Telescope Menu" })
 
     -- local harpoon = require("harpoon")
 
@@ -52,9 +52,13 @@ return {
     -- vim.keymap.set("n", "<leader>A", function()
     --     harpoon:list():add()
     -- end)
-    vim.keymap.set("n", "<leader>A", function()
-            harpoon:list():prepend()
-    end)
+    vim.keymap.set("n", "<leader>hA", function()
+        harpoon:list():prepend()
+    end, { desc = "Harpoon Prepend Current Buffer" })
+
+    vim.keymap.set("n", "<leader>ha", function()
+        harpoon:list():add()
+    end, { desc = "Harpoon Add Current Buffer" })
 
     --== HarpoonAdd
     vim.api.nvim_create_user_command('HarpoonAdd', function()
@@ -90,9 +94,9 @@ return {
     -- Toggle previous & next buffers stored within Harpoon list
     vim.keymap.set("n", "<leader>hn", function()
       harpoon:list():prev()
-    end)
+    end, { desc = "Harpoon Next Buffer" })
     vim.keymap.set("n", "<leader>hp", function()
       harpoon:list():next()
-    end)
+    end, { desc = "Harpoon Previous Buffer" })
   end,
 }
