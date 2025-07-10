@@ -12,6 +12,11 @@ vim.api.nvim_create_user_command('LuaSnipList', function()
   end
 end, {})
 
+--== Remove blankline whitespace
+vim.api.nvim_create_user_command('BlankRemove', function(opts)
+  vim.cmd([[:%s/\s\+$//]])
+end, { nargs = '?' })
+
 --== TabIndentFour
 vim.api.nvim_create_user_command('TabIndentFour', function(opts)
   vim.opt.tabstop = 4
