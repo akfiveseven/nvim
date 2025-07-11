@@ -36,6 +36,7 @@ return {
                 lualine_c = {
                     {
                         'filename',
+                        path = 3,
                         color = { fg = '#FFFFFF' },  -- Make it bright white
                         background = 'transparent',
                     }
