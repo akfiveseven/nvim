@@ -29,8 +29,8 @@ return {
         hijack_netrw_behavior = "open_default",  -- Replace netrw
       },
       window = {
-        position = "right",  -- Set the tree to appear on the right side
-        width = 30,
+        position = "left",  -- Set the tree to appear on the right side
+        width = 25,
       },
     })
   end,
