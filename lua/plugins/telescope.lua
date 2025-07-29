@@ -8,7 +8,20 @@ return {
     },
 
     config = function()
-        require('telescope').setup({})
+
+        require('telescope').setup({
+            defaults = {
+                mappings = {
+                    i = {
+                        ["<C-q>"] = require('telescope.actions').smart_send_to_qflist + require('telescope.actions').open_qflist,
+                    },
+                    n = {
+                        ["<C-q>"] = require('telescope.actions').smart_send_to_qflist + require('telescope.actions').open_qflist,
+                    },
+                },
+            },
+
+        })
 
         local builtin = require('telescope.builtin')
         vim.keymap.set('n', '<leader>tb', ':BufferSwitch<CR>', { desc = "Telescope buffers" })
@@ -71,27 +84,27 @@ return {
 
 
         vim.api.nvim_create_user_command('BufferSwitch', function()
-          telescope.buffers({
-            attach_mappings = function(prompt_bufnr, map)
-              -- Override the default enter action
-              actions.select_default:replace(function()
-                local selection = action_state.get_selected_entry()
-                actions.close(prompt_bufnr)
+            telescope.buffers({
+                attach_mappings = function(prompt_bufnr, map)
+                    -- Override the default enter action
+                    actions.select_default:replace(function()
+                        local selection = action_state.get_selected_entry()
+                        actions.close(prompt_bufnr)
 
-                -- Check if the buffer exists and has windows
-                local windows = vim.fn.win_findbuf(selection.bufnr)
+                        -- Check if the buffer exists and has windows
+                        local windows = vim.fn.win_findbuf(selection.bufnr)
 
-                if windows and #windows > 0 then
-                  -- Jump to the first window containing this buffer
-                  vim.fn.win_gotoid(windows[1])
-                else
-                  -- If no window contains the buffer, just switch to it
-                  vim.cmd(string.format("buffer %d", selection.bufnr))
-                end
-              end)
-              return true
-            end,
-          })
+                        if windows and #windows > 0 then
+                            -- Jump to the first window containing this buffer
+                            vim.fn.win_gotoid(windows[1])
+                        else
+                            -- If no window contains the buffer, just switch to it
+                            vim.cmd(string.format("buffer %d", selection.bufnr))
+                        end
+                    end)
+                    return true
+                end,
+            })
         end, {})
 
         vim.api.nvim_create_user_command('NewTabFiles', function()
@@ -129,6 +142,10 @@ return {
             end
             -- Force tabline refresh
             vim.cmd('redrawtabline')
+        end, { nargs = '?' })
+
+        vim.api.nvim_create_user_command('SendToQuickFix', function(opts)
+            vim.cmd([[:lua require('telescope.actions').smart_send_to_qflist + require('telescope.actions').open_qflist]])
         end, { nargs = '?' })
 
         -- Modified tabline function to use custom names

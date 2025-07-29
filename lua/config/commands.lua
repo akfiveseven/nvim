@@ -1,3 +1,16 @@
+local custom_commands = { "LuaSnipList", "BlankRemove", "TabIndentFour", "TabIndentTwo", "MarksDeleteAll", "MacroSaveRegister", "LoadSnippets" }
+
+--== List all custom commands
+vim.api.nvim_create_user_command('ListCustomCommands', function()
+  print("Custom commands:")
+
+  -- Loop through each command in custom_commands and print it
+  for _, command in ipairs(custom_commands) do
+    print("  " .. command)
+  end
+end, {})
+
+
 --== LuaSnipList
 vim.api.nvim_create_user_command('LuaSnipList', function()
   local ls = require("luasnip")
