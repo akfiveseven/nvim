@@ -32,10 +32,10 @@ return {
     require("mason-lspconfig").setup({
       ensure_installed = {
         "lua_ls",
-        "pylsp",
-        "ast_grep",
-        "tailwindcss",
-        "ts_ls"
+        -- "pylsp",
+        -- "ast_grep",
+        -- "tailwindcss",
+        -- "ts_ls"
       },
       handlers = {
         function(server_name)
