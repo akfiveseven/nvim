@@ -39,44 +39,41 @@ return {
       },
       handlers = {
         function(server_name)
-          require("lspconfig")[server_name].setup {
-            capabilities = capabilities,
-            autostart = true,  -- 🔴 prevent auto-start
-          }
+          vim.lsp.enable(server_name)
         end,
 
-        zls = function()
-          local lspconfig = require("lspconfig")
-          lspconfig.zls.setup({
-            autostart = true,  -- 🔴 disable autostart
-            root_dir = lspconfig.util.root_pattern(".git", "build.zig", "zls.json"),
-            settings = {
-              zls = {
-                enable_inlay_hints = true,
-                enable_snippets = true,
-                warn_style = true,
-              },
-            },
-          })
-          vim.g.zig_fmt_parse_errors = 0
-          vim.g.zig_fmt_autosave = 0
-        end,
+        -- zls = function()
+        --   local lspconfig = vim.lsp.config
+        --   lspconfig.zls.setup({
+        --     autostart = true,  -- 🔴 disable autostart
+        --     root_dir = lspconfig.util.root_pattern(".git", "build.zig", "zls.json"),
+        --     settings = {
+        --       zls = {
+        --         enable_inlay_hints = true,
+        --         enable_snippets = true,
+        --         warn_style = true,
+        --       },
+        --     },
+        --   })
+        --   vim.g.zig_fmt_parse_errors = 0
+        --   vim.g.zig_fmt_autosave = 0
+        -- end,
 
-        ["lua_ls"] = function()
-          local lspconfig = require("lspconfig")
-          lspconfig.lua_ls.setup {
-            autostart = true,  -- 🔴 disable autostart
-            capabilities = capabilities,
-            settings = {
-              Lua = {
-                runtime = { version = "Lua 5.1" },
-                diagnostics = {
-                  globals = { "bit", "vim", "it", "describe", "before_each", "after_each" },
-                }
-              }
-            }
-          }
-        end,
+        -- ["lua_ls"] = function()
+        --   local lspconfig = vim.lsp.config
+        --   lspconfig.lua_ls.setup({
+        --     autostart = true,  -- 🔴 disable autostart
+        --     capabilities = capabilities,
+        --     settings = {
+        --       Lua = {
+        --         runtime = { version = "Lua 5.1" },
+        --         diagnostics = {
+        --           globals = { "bit", "vim", "it", "describe", "before_each", "after_each" },
+        --         }
+        --       }
+        --     }
+        --   })
+        -- end,
       }
     })
 
