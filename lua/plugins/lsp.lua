@@ -168,6 +168,10 @@ return {
       vim.cmd("CmpToggleSource " .. vim.fn.input("cmp source: "))
     end, { desc = "Toggle nvim-cmp source in current buffer" })
 
+    vim.keymap.set("n", "<leader>cls", function()
+      vim.cmd("CmpToggleSource nvim_lsp")
+    end, { desc = "Toggle nvim-cmp source in current buffer" })
+
     -- vim.g.cmp_enabled = true
     -- cmp.setup({ enabled = function() return vim.g.cmp_enabled end })
     -- vim.api.nvim_create_user_command('CmpToggle', function()
