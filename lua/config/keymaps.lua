@@ -84,4 +84,7 @@ vim.keymap.set("n", "<leader>gs", ":Git status<CR>", { desc = "Open :Git status"
 vim.keymap.set("n", "<leader>gl", ":Git log<CR>", { desc = "Open :Git log" })
 vim.keymap.set("n", "<leader>ga", ":Git add ", { desc = "Run :Git add .", silent = false })
 
+vim.keymap.set("v", "<leader>ssw", ":SnippetSave", { desc = "Save a code block", silent = false })
+vim.keymap.set("n", "<leader>ssl", ":SnippetShow", { desc = "Show code block list", silent = false })
+vim.keymap.set("n", "<leader>ssd", ":SnippetDelete", { desc = "Delete a code block", silent = false })
 
