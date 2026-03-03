@@ -1,6 +1,10 @@
 return {
     "nvim-treesitter/nvim-treesitter",
+    -- Pin to master branch: has the "configs" API (ensure_installed, highlight, indent).
+    -- The default "main" branch is a rewrite with a different API.
+    branch = "master",
     build = ":TSUpdate",
+    lazy = false, -- Load at startup so syntax highlighting works immediately.
     config = function()
         require("nvim-treesitter.configs").setup({
             -- A list of parser names, or "all"
