@@ -77,8 +77,8 @@ vim.keymap.set("n", "<leader>tt", ":ToggleTerm<CR>", { desc = "Open Terminal", s
 -- TELESCOPE
 vim.keymap.set("n", "<leader>tn", ":Telescope find_files cwd=~/.config/nvim<CR>", { desc = "Open Nvim Config Files", silent = true })
 vim.keymap.set("n", "<leader>td", ":Telescope find_files cwd=", { desc = "Telescope Open Directory" })
--- vim.keymap.set("n", "<leader>to", ":Telescope find_files cwd=~/obsidian-vaults/obsidian-vault<CR>", { desc = "Open Obsidian Files", silent = true })
-vim.keymap.set("n", "<leader>oo", ":Telescope find_files cwd=~/obsidian-vaults/obsidian-vault<CR>", { desc = "Open Obsidian Files", silent = true })
+-- vim.keymap.set("n", "<leader>to", ":Telescope find_files cwd=~/Documents/obsidian-vault<CR>", { desc = "Open Obsidian Files", silent = true })
+vim.keymap.set("n", "<leader>oo", ":Telescope find_files cwd=~/Documents/obsidian-vault<CR>", { desc = "Open Obsidian Files", silent = true })
 
 vim.keymap.set("n", "<leader>gs", ":Git status<CR>", { desc = "Open :Git status" })
 vim.keymap.set("n", "<leader>gl", ":Git log<CR>", { desc = "Open :Git log" })

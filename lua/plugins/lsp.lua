@@ -138,8 +138,10 @@ return {
     vim.api.nvim_create_autocmd("BufEnter", {
       callback = function(args)
         local bufnr = args.buf
+        if disabled_by_buf[bufnr] == nil and vim.bo[bufnr].filetype ~= "markdown" then
+          disabled_by_buf[bufnr] = { nvim_lsp = true } -- disable by default (obsidian.nvim needs it in markdown)
+        end
         disabled_by_buf[bufnr] = disabled_by_buf[bufnr] or {}
-        disabled_by_buf[bufnr]["nvim_lsp"] = true -- disable by default
         apply_sources(bufnr)
       end,
     })
@@ -162,6 +164,9 @@ return {
         -- nvim_lsp intentionally not listed here (disabled by default)
       },
     })
+
+    -- obsidian.nvim provides completion via in-process LSP, so markdown needs nvim_lsp
+    cmp.setup.filetype("markdown", { sources = base_sources })
 
     -- Optional: quick keybind to toggle interactively
     vim.keymap.set("n", "<leader>ct", function()
